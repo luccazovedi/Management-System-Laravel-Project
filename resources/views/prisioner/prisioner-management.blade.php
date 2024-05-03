@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white ">
                 <div class="p-6 bg-white dark:bg-gray-800">
-                    <h2 class="text-lg font-semibold mb-4 text-color-white">Detentos Cadastrados:</h2>
                     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                         <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                             <table class="min-w-full leading-normal w-full">
