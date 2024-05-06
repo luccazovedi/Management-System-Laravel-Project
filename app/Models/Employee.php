@@ -22,6 +22,7 @@ class Employee extends Model
         'state',
         'country',
         'role',
+        'other',
         'date_admission',
         'salary',
     ];

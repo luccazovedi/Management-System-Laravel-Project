@@ -41,6 +41,7 @@ class CreateAllTables extends Migration
             $table->string('state', 100)->nullable();
             $table->string('country', 100)->nullable();
             $table->string('role', 100)->nullable();
+            $table->string('other', 100)->nullable();
             $table->date('date_admission')->nullable();
             $table->decimal('salary', 10, 2)->nullable();
             $table->timestamps();

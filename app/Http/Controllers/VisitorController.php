@@ -48,7 +48,7 @@ class VisitorController extends Controller
         $prisioners = Prisioner::all();
         return view('visitor.edit-visitor', compact('visitor', 'prisioners'));
     }
-        public function update(Request $request, Visitor $visitor)
+    public function update(Request $request, Visitor $visitor)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
@@ -67,10 +67,11 @@ class VisitorController extends Controller
             'visit_time' => 'nullable|date_format:H:i',
             'prisioner_id' => 'required|exists:prisioners,id'
         ]);
-
+    
         $visitor->update($validatedData);
         return redirect()->route('visitor.management')->with('success', 'Visitante atualizado com sucesso!');
     }
+    
 
         public function destroy(Visitor $visitor)
     {

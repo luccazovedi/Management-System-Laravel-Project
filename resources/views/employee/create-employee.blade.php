@@ -66,12 +66,16 @@
                         </div>
                         <div class="mb-4">
                             <label for="role" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Função:</label>
-                            <select id="role" name="role" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <select id="role" name="role" onchange="toggleOtherField()" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option value="Segurança">Segurança</option>
                                 <option value="Cozinha">Cozinheiro(a)</option>
                                 <option value="Zelo">Zelador(a)</option>
                                 <option value="Outro">Outro</option>
                             </select>
+                        </div>
+                        <div class="mb-4" id="other" style="display: none;">
+                            <label for="other" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Especifique:</label>
+                            <input type="text" id="other" name="other" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
                         </div>
                         <div class="mb-4">
                             <label for="date_admission" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Data de Admissão:</label>
@@ -108,5 +112,15 @@
             .catch(error => {
                 console.error('Erro ao buscar CEP:', error);
             });
+    }
+    function toggleOtherField() {
+        var roleSelect = document.getElementById('role');
+        var other = document.getElementById('other');
+
+        if (roleSelect.value === 'Outro') {
+            other.style.display = 'block';
+        } else {
+            other.style.display = 'none';
+        }
     }
 </script>

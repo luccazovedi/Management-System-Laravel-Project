@@ -3,24 +3,34 @@
 namespace Database\Factories;
 
 use App\Models\Visitor;
+use App\Models\Prisioner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class VisitorFactory extends Factory
 {
+    // Armazena os IDs dos prisioneiros
+    private static $prisionerIds = [];
+
     /**
-     * The name of the factory's corresponding model.
+     * Define o modelo de fábrica correspondente.
      *
-     * @var string
+     * @return string
      */
     protected $model = Visitor::class;
 
     /**
-     * Define the model's default state.
+     * Define os atributos padrão do modelo.
      *
      * @return array
      */
     public function definition()
     {
+        // Verifica se há prisioneiros disponíveis
+        if (empty(self::$prisionerIds)) {
+            // Se não houver, obtém todos os IDs dos prisioneiros
+            self::$prisionerIds = Prisioner::pluck('id')->toArray();
+        }
+
         return [
             'name' => $this->faker->name,
             'document' => $this->faker->numerify('##########'), // Generates a random 10-digit document number
@@ -36,7 +46,7 @@ class VisitorFactory extends Factory
             'gender' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
             'visit_date' => $this->faker->dateTimeBetween('now', '+30 days'),
             'visit_time' => $this->faker->time('H:i:s'),
-            'prisioner_id' => null, // By default, no associated prisoner
+            'prisioner_id' => $this->faker->randomElement(self::$prisionerIds), // Seleciona aleatoriamente um prisioner_id disponível
         ];
     }
 }

@@ -29,6 +29,7 @@ class EmployeeFactory extends Factory
             'state' => $this->faker->state,
             'country' => $this->faker->country,
             'role' => $this->faker->jobTitle,
+            'other' => $this->faker->sentence,
             'date_admission' => $this->faker->dateTimeBetween('-5 years', 'now'),
             'salary' => $this->faker->randomFloat(2, 1000, 10000),
         ];

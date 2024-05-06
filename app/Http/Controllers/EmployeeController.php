@@ -34,6 +34,7 @@ class EmployeeController extends Controller
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
             'role' => 'nullable|string|max:100',
+            'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
             'salary' => 'nullable|numeric|between:0,9999999.99',
         ]);
@@ -63,6 +64,7 @@ class EmployeeController extends Controller
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
             'role' => 'nullable|string|max:100',
+            'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
             'salary' => 'nullable|numeric|between:0,9999999.99',
         ]);
