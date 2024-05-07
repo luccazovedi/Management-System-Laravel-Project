@@ -22,8 +22,17 @@ class PrisionerController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'lastname' => 'nullable|string|max:255',
             'age' => 'nullable|integer',
             'gender' => 'required|in:Masculino,Feminino,Outro',
+            'document' => 'nullable|string|max:20',
+            'zipcode' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'number' => 'nullable|string|max:20',
+            'city' => 'nullable|string|max:100',
+            'state' => 'nullable|string|max:100',
+            'country' => 'nullable|string|max:100',
+            'observation' => 'nullable|string|max:255',
             'date_entry' => 'nullable|date',
             'date_out' => 'nullable|date',
             'cell' => 'nullable|string|max:20',
@@ -45,14 +54,24 @@ class PrisionerController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'lastname' => 'nullable|string|max:255',
             'age' => 'nullable|integer',
             'gender' => 'required|in:Masculino,Feminino,Outro',
+            'document' => 'nullable|string|max:20',
+            'zipcode' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'number' => 'nullable|string|max:20',
+            'city' => 'nullable|string|max:100',
+            'state' => 'nullable|string|max:100',
+            'country' => 'nullable|string|max:100',
+            'observation' => 'nullable|string|max:255',
             'date_entry' => 'nullable|date',
             'date_out' => 'nullable|date',
             'cell' => 'nullable|string|max:20',
             'crime' => 'nullable|string|max:255',
-            'updated_at' => 'nullable|string|max:100',
-            'created_at' => 'nullable|string|max:100'
+            'updated_at' => 'nullable|timestamp',
+            'created_at' => 'nullable|timestamp'
+
         ]);
 
         $prisioner->update($validatedData);

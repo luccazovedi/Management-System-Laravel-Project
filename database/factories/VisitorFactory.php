@@ -25,15 +25,14 @@ class VisitorFactory extends Factory
      */
     public function definition()
     {
-        // Verifica se há prisioneiros disponíveis
         if (empty(self::$prisionerIds)) {
-            // Se não houver, obtém todos os IDs dos prisioneiros
             self::$prisionerIds = Prisioner::pluck('id')->toArray();
         }
 
         return [
             'name' => $this->faker->name,
-            'document' => $this->faker->numerify('##########'), // Generates a random 10-digit document number
+            'lastname' => $this->faker->lastName,
+            'document' => $this->faker->numerify('##########'), 
             'age' => $this->faker->numberBetween(18, 90),
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
@@ -46,7 +45,7 @@ class VisitorFactory extends Factory
             'gender' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
             'visit_date' => $this->faker->dateTimeBetween('now', '+30 days'),
             'visit_time' => $this->faker->time('H:i:s'),
-            'prisioner_id' => $this->faker->randomElement(self::$prisionerIds), // Seleciona aleatoriamente um prisioner_id disponível
+            'prisioner_id' => $this->faker->randomElement(self::$prisionerIds),
         ];
     }
 }

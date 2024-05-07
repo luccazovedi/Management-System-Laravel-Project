@@ -9,8 +9,13 @@ class UserController extends Controller
 {
     public function index()
     {
+        $accessLevels = [
+            'admin' => 'Admin',
+            'visitor_management' => 'Gestor de Visitante',
+            'prisioner_management' => 'Gestor de Detentos',
+        ];
         $users = User::all();
-        return view('user.user-management', compact('users'));
+        return view('user.user-management', compact('users', 'accessLevels'));
     }
     
     public function create()
@@ -22,8 +27,12 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'lastname' => 'nullable|string|max:255',
+            'document' => 'nullable|string|max:20',
+            'phone' => 'nullable|string|max:25',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
+            'access_level' => 'required|in:admin,visitor_management,prisioner_management',
         ]);
         User::create($validatedData);
         return redirect()->route('user.management')->with('success', 'Usuário criado com sucesso!');
@@ -38,13 +47,18 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8',
+            'lastname' => 'nullable|string|max:255',
+            'document' => 'nullable|string|max:20',
+            'phone' => 'nullable|string|max:25',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            'access_level' => 'required|in:admin,visitor_management,prisioner_management',
         ]);
+
         $user->update($validatedData);
         return redirect()->route('user.management')->with('success', 'Informações do usuário atualizadas com sucesso!');
     }
-
+    
     public function destroy(User $user)
     {
         $user->delete();

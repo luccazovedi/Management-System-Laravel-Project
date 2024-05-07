@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <h2 class="text-lg font-semibold mb-4">Inserir Novo Funcionário</h2>
                     <form action="{{ route('employee.store') }}" method="POST">
                         @csrf
                         <div class="mb-4">

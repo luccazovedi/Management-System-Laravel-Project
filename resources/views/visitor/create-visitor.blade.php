@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white ">
                 <div class="p-6 bg-white dark:bg-gray-800">
-                    <form method="POST" action="{{ route('visitor.store') }}" class="max-w-lg">
+                    <form method="POST" action="{{ route('visitor.store') }}">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome:</label>

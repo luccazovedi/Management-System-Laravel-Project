@@ -17,6 +17,7 @@ class EmployeeFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'lastname' => $this->faker->lastName,
             'document' => $this->faker->numerify('##########'), // Generates a random 10-digit document number
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,

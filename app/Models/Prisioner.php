@@ -11,12 +11,21 @@ class Prisioner extends Model
     use HasFactory, Notifiable;
     protected $fillable = [
         'name',
+        'lastname',
+        'document',
         'age', 
+        'cell',
         'gender',
+        'zipcode',
+        'address',
+        'number',
+        'city',
+        'state',
+        'country',
         'date_entry',
         'date_out',
-        'cell',
         'crime',
+        'observation',
         'updated_at',
         'created_at'
     ];

@@ -22,6 +22,7 @@ class EmployeeController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
+            'lastname' => 'nullable|string|max:100',
             'document' => 'nullable|string|max:100',
             'phone' => 'nullable|string|max:25',
             'email' => 'nullable|string|max:255',
@@ -52,6 +53,7 @@ class EmployeeController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
+            'lastname' => 'nullable|string|max:100',
             'document' => 'nullable|string|max:100',
             'phone' => 'nullable|string|max:25',
             'email' => 'nullable|string|max:255',

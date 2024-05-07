@@ -24,6 +24,7 @@ class VisitorController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
+            'lastname' => 'nullable|string|max:100',
             'document' => 'nullable|string|max:20',
             'age' => 'nullable|integer',
             'phone' => 'nullable|string|max:25',
@@ -52,6 +53,7 @@ class VisitorController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
+            'lastname' => 'nullable|string|max:100',
             'document' => 'nullable|string|max:20',
             'age' => 'nullable|integer',
             'phone' => 'nullable|string|max:25',

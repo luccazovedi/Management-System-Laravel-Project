@@ -12,13 +12,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Obtém os dados necessários do banco de dados
         $employeesCount = Employee::count();
         $visitorsCount = Visitor::count();
         $prisionersCount = Prisioner::count();
         $usersCount = User::count();
 
-        // Prepara os dados para o gráfico de pizza
         $pieChartData = [
             'Funcionários' => $employeesCount,
             'Visitantes' => $visitorsCount,
@@ -26,7 +24,6 @@ class DashboardController extends Controller
             'Usuários' => $usersCount,
         ];
 
-        // Retorna os dados para a view
         return view('dashboard', compact('employeesCount', 'visitorsCount', 'prisionersCount', 'usersCount', 'pieChartData'));
     }
 }

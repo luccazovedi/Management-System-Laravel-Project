@@ -22,7 +22,13 @@
                                             Nome</th>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                                            Email</th>
+                                            Sobrenome</th>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                            Documento</th>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                                            Nível de Acesso</th>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
                                             Ações</th>
@@ -37,7 +43,13 @@
                                             {{ $user->name }}</td>
                                         <td
                                             class="px-5 py-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm">
-                                            {{ $user->email }}</td>
+                                            {{ $user->lastname }}</td>
+                                        <td
+                                            class="px-5 py-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm">
+                                            {{ $user->document }}</td>
+                                        <td
+                                            class="px-5 py-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm">
+                                            {{ $accessLevels[$user->access_level] }}</td>
                                         <td
                                             class="px-5 py-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm flex-space-around">
                                             <a href="{{ route('user.edit', $user->id) }}"

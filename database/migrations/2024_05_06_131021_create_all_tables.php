@@ -26,27 +26,6 @@ class CreateAllTables extends Migration
             $table->integer('expiration');
         });
 
-        Schema::create('employees', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('document', 20)->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone', 20)->nullable();
-            $table->integer('age')->nullable();
-            $table->enum('gender', ['Masculino', 'Feminino', 'Outro'])->nullable();
-            $table->string('zipcode', 10)->nullable();
-            $table->string('address')->nullable();
-            $table->string('number', 10)->nullable();
-            $table->string('city', 100)->nullable();
-            $table->string('state', 100)->nullable();
-            $table->string('country', 100)->nullable();
-            $table->string('role', 100)->nullable();
-            $table->string('other', 100)->nullable();
-            $table->date('date_admission')->nullable();
-            $table->decimal('salary', 10, 2)->nullable();
-            $table->timestamps();
-        });
-
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
@@ -80,24 +59,6 @@ class CreateAllTables extends Migration
             $table->integer('finished_at')->nullable();
         });
 
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
-
-        Schema::create('prisioners', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100);
-            $table->integer('age')->nullable();
-            $table->enum('gender', ['Masculino', 'Feminino', 'Outro'])->nullable();
-            $table->date('date_entry')->nullable();
-            $table->date('date_out')->nullable();
-            $table->string('cell', 20)->nullable();
-            $table->string('crime', 255)->nullable();
-            $table->timestamps();
-        });
-
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->unsignedBigInteger('user_id')->nullable();
@@ -107,12 +68,65 @@ class CreateAllTables extends Migration
             $table->unsignedInteger('last_activity');
         });
 
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
+
+        Schema::create('prisioners', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 100);
+            $table->string('lastname', 100)->nullable();
+            $table->string('document', 20)->nullable();
+            $table->integer('age')->nullable();
+            $table->enum('gender', ['Masculino', 'Feminino', 'Outro'])->nullable();
+            $table->string('zipcode', 20)->nullable();
+            $table->string('address')->nullable();
+            $table->string('number', 20)->nullable();
+            $table->string('city', 100)->nullable();
+            $table->string('state', 100)->nullable();
+            $table->string('country', 100)->nullable();
+            $table->string('cell', 20)->nullable();
+            $table->string('crime', 255)->nullable();
+            $table->string('observation', 255)->nullable();
+            $table->date('date_entry')->nullable();
+            $table->date('date_out')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('employees', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('lastname')->nullable();
+            $table->string('document', 20)->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone', 20)->nullable();
+            $table->integer('age')->nullable();
+            $table->enum('gender', ['Masculino', 'Feminino', 'Outro'])->nullable();
+            $table->string('zipcode', 10)->nullable();
+            $table->string('address')->nullable();
+            $table->string('number', 10)->nullable();
+            $table->string('city', 100)->nullable();
+            $table->string('state', 100)->nullable();
+            $table->string('country', 100)->nullable();
+            $table->string('role', 100)->nullable();
+            $table->string('other', 100)->nullable();
+            $table->date('date_admission')->nullable();
+            $table->decimal('salary', 10, 2)->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('lastname');
+            $table->string('document', 20)->nullable();
+            $table->string('phone', 20)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('access_level', ['admin', 'visitor_management', 'prisioner_management']);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -120,6 +134,7 @@ class CreateAllTables extends Migration
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
+            $table->string('lastname', 100)->nullable();
             $table->string('document', 20)->nullable();
             $table->integer('age')->nullable();
             $table->string('phone', 25)->nullable();
@@ -138,12 +153,6 @@ class CreateAllTables extends Migration
 
             $table->foreign('prisioner_id')->references('id')->on('prisioners')->onDelete('cascade');
         });
-        
-        User::create([
-            'name' => 'Teste',
-            'email' => 'teste@teste',
-            'password' => Hash::make('senha123'),
-        ]);
     }
 
     /**
