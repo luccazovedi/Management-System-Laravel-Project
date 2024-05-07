@@ -69,11 +69,12 @@ class VisitorController extends Controller
             'visit_time' => 'nullable|date_format:H:i',
             'prisioner_id' => 'required|exists:prisioners,id'
         ]);
-    
+        if (!Prisioner::where('id', $validatedData['prisioner_id'])->exists()) {
+            return redirect()->back()->withErrors(['prisioner_id' => 'O prisioneiro selecionado não existe.'])->withInput();
+        }
         $visitor->update($validatedData);
         return redirect()->route('visitor.management')->with('success', 'Visitante atualizado com sucesso!');
     }
-    
 
         public function destroy(Visitor $visitor)
     {

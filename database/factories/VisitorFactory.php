@@ -24,28 +24,21 @@ class VisitorFactory extends Factory
      * @return array
      */
     public function definition()
-    {
-        if (empty(self::$prisionerIds)) {
-            self::$prisionerIds = Prisioner::pluck('id')->toArray();
-        }
-
+    {    
         return [
             'name' => $this->faker->name,
             'lastname' => $this->faker->lastName,
             'document' => $this->faker->numerify('##########'), 
             'age' => $this->faker->numberBetween(18, 90),
-            'phone' => $this->faker->phoneNumber,
-            'email' => $this->faker->unique()->safeEmail,
+            'gender' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
+            'zipcode' => $this->faker->postcode,
             'address' => $this->faker->streetAddress,
             'number' => $this->faker->buildingNumber,
             'city' => $this->faker->city,
-            'zipcode' => $this->faker->postcode,
             'state' => $this->faker->state,
             'country' => $this->faker->country,
-            'gender' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
             'visit_date' => $this->faker->dateTimeBetween('now', '+30 days'),
             'visit_time' => $this->faker->time('H:i:s'),
-            'prisioner_id' => $this->faker->randomElement(self::$prisionerIds),
         ];
     }
 }

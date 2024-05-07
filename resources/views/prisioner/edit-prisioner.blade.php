@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Editar Informações do(a) Detendo') }}
+            {{ __('Editar Informações do(a) Detento') }}
         </h2>
     </x-slot>
 
@@ -18,6 +18,56 @@
                             <input type="text" id="name" name="name" value="{{ $prisioner->name }}"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
                         </div>
+                        <div class="mb-4">
+                            <label for="lastname"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome:</label>
+                            <input type="text" id="lastname" name="lastname" value="{{ $prisioner->lastname }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="document"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Documento:</label>
+                            <input type="text" id="document" name="document" value="{{ $prisioner->document }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="zipcode"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">CEP:</label>
+                            <input type="text" id="zipcode" name="zipcode" value="{{ $prisioner->zipcode }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md"
+                                onchange="searchCEP()">
+                        </div>
+                        <div class="mb-4">
+                            <label for="address"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Endereço:</label>
+                            <input type="text" id="address" name="address" value="{{ $prisioner->address }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="number"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Número:</label>
+                            <input type="text" id="number" name="number" value="{{ $prisioner->number }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="city"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Cidade:</label>
+                            <input type="text" id="city" name="city" value="{{ $prisioner->city }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="state"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Estado:</label>
+                            <input type="text" id="state" name="state" value="{{ $prisioner->state }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="country"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">País:</label>
+                            <input type="text" id="country" name="country" value="{{ $prisioner->country }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+
                         <div class="mb-4">
                             <label for="age"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Idade:</label>
@@ -135,3 +185,23 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+function searchCEP() {
+    var zipcode = document.getElementById('zipcode').value;
+    fetch('https://viacep.com.br/ws/' + zipcode + '/json/')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.erro) {
+                document.getElementById('city').value = data.localidade;
+                document.getElementById('address').value = data.logradouro;
+                document.getElementById('state').value = data.uf;
+                document.getElementById('country').value = 'Brasil';
+            } else {
+                alert('CEP não encontrado');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar CEP:', error);
+        });
+}
+</script>

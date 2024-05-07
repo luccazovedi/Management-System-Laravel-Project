@@ -4,7 +4,6 @@
             {{ __('Editar Informações do(a) Visitante') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white ">
@@ -16,6 +15,12 @@
                             <label for="name"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome:</label>
                             <input type="text" id="name" name="name" value="{{ $visitor->name }}"
+                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                        </div>
+                        <div class="mb-4">
+                            <label for="lastname"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sobrenome:</label>
+                            <input type="text" id="lastname" name="lastname" value="{{ $visitor->lastname }}"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
                         </div>
                         <div class="mb-4">
@@ -115,9 +120,8 @@
                                 @endforeach
                             </select>
                         </div>
-                        <input type="hidden" name="prisioner_id" value="{{ $visitor->prisioner_id }}">
 
-                        <a href="{{ route('prisioner.management') }}"
+                        <a href="{{ route('visitor.management') }}"
                             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</a>
                         <button type="submit"
                             class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Salvar

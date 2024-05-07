@@ -34,10 +34,10 @@ class EmployeeController extends Controller
             'city' => 'nullable|string|max:255',
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
-            'role' => 'nullable|string|max:100',
+            'role' => 'nullable|in:Zelador, Cozinheiro, Motorista, Secretário, Outro',
             'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
-            'salary' => 'nullable|numeric|between:0,9999999.99',
+            'salary' => 'nullable|integer',
         ]);
 
         Employee::create($validatedData);
@@ -65,10 +65,10 @@ class EmployeeController extends Controller
             'city' => 'nullable|string|max:255',
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
-            'role' => 'nullable|string|max:100',
+            'role' => 'nullable|in:Zelador, Cozinheiro, Motorista, Secretário, Outro',
             'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
-            'salary' => 'nullable|numeric|between:0,9999999.99',
+            'salary' => 'nullable|integer',
         ]);
 
         $employee->update($validatedData);

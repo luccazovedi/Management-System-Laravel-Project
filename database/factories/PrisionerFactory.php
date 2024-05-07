@@ -16,9 +16,9 @@ class PrisionerFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => 'Prisioner ' . $this->faker->unique()->numberBetween(1, 100),
             'lastname' => $this->faker->lastName,
-            'document' => $this->faker->numerify('##########'), // Generates a random 10-digit document number
+            'document' => $this->faker->numerify('##########'), 
             'age' => $this->faker->numberBetween(18, 90),
             'gender' => $this->faker->randomElement(['Masculino', 'Feminino', 'Outro']),
             'zipcode' => $this->faker->postcode,

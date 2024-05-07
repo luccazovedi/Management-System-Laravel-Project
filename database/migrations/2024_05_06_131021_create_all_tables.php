@@ -110,10 +110,10 @@ class CreateAllTables extends Migration
             $table->string('city', 100)->nullable();
             $table->string('state', 100)->nullable();
             $table->string('country', 100)->nullable();
-            $table->string('role', 100)->nullable();
+            $table->enum('role', ['Zelador, Cozinheiro, Motorista, Secretário, Outro'])->nullable();
             $table->string('other', 100)->nullable();
             $table->date('date_admission')->nullable();
-            $table->decimal('salary', 10, 2)->nullable();
+            $table->integer('salary')->nullable();
             $table->timestamps();
         });
 

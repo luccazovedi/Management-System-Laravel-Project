@@ -18,7 +18,7 @@ class EmployeeFactory extends Factory
         return [
             'name' => $this->faker->name,
             'lastname' => $this->faker->lastName,
-            'document' => $this->faker->numerify('##########'), // Generates a random 10-digit document number
+            'document' => $this->faker->numerify('##########'), 
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
             'age' => $this->faker->numberBetween(18, 70),
@@ -29,7 +29,7 @@ class EmployeeFactory extends Factory
             'city' => $this->faker->city,
             'state' => $this->faker->state,
             'country' => $this->faker->country,
-            'role' => $this->faker->jobTitle,
+            'role' => $this->faker->randomElement(['Zelador, Cozinheiro, Motorista, Secretário, Outro']),
             'other' => $this->faker->sentence,
             'date_admission' => $this->faker->dateTimeBetween('-5 years', 'now'),
             'salary' => $this->faker->randomFloat(2, 1000, 10000),

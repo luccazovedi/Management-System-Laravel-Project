@@ -1,25 +1,25 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Alteração de Informações de Usuário') }}
+            {{ __('Editar Informações do Usuário') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+            <div class="p-6 bg-white dark:bg-gray-800">
                 <div>
                     <header>
                         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                            {{ __('Suas Informações') }}
+                            {{ __('Suas Informações Pessoais') }}
                         </h2>
 
                         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                            {{ __("Altere suas informações e seu e-mail.") }}
+                            {{ __("Altere suas informações pessoais.") }}
                         </p>
                     </header>
 
-                    <form method="post" action="{{ route('user.update', ['user' => $user]) }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('user.updatePersonalInfo', ['user' => $user]) }}"
+                        class="mt-6 space-y-6">
                         @csrf
                         @method('PUT')
                         <div>
@@ -46,63 +46,88 @@
                                 :value="old('phone', $user->phone)" required autofocus autocomplete="name" />
                             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
                         </div>
-                        <div>
-                            <x-input-label for="email" :value="__('Email')" />
-                            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full"
-                                :value="old('email', $user->email)" required autocomplete="username" />
-                            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+                        <a href="{{ route('user.management') }}"
+                            class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</a>
 
-                            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !
-                            $user->hasVerifiedEmail())
+                        <button type="submit"
+                            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Salvar
+                            Alterações</button>
+                    </form>
+                </div>
+            </div>
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                <div>
+                    <section class="space-y-6">
+                        <header>
+                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                {{ __('Alterar Senha e Nível de Acesso') }}
+                            </h2>
+
+                            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                {{ __('Altere sua senha e nível de acesso.') }}
+                            </p>
+                        </header>
+
+                        <form method="post" action="{{ route('user.updatePasswordAndAccess', ['user' => $user]) }}"
+                            class="mt-6 space-y-6">
+                            @csrf
+                            @method('PUT')
                             <div>
-                                <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
-                                    {{ __('Seu e-mail não foi verificado ainda.') }}
+                                <div class="mb-4">
+                                    <x-input-label for="email" :value="__('Email')" />
+                                    <x-text-input id="email" name="email" type="email" class="mt-1 block w-full"
+                                        :value="old('email')" required autocomplete="username" />
+                                    <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
-                                    <button form="send-verification"
-                                        class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                                        {{ __('Clique aqui para enviar novamente o link de verificação.') }}
-                                    </button>
-                                </p>
+                                    @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !
+                                    $user->hasVerifiedEmail())
+                                    <div>
+                                        <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
+                                            {{ __('Seu e-mail não foi verificado ainda.') }}
 
-                                @if (session('status') === 'verification-link-sent')
-                                <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
-                                    {{ __('Um novo link de verificação foi enviado ao seu e-mail.') }}
-                                </p>
-                                @endif
+                                            <button form="send-verification"
+                                                class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                                {{ __('Clique aqui para enviar novamente o link de verificação.') }}
+                                            </button>
+                                        </p>
+
+                                        @if (session('status') === 'verification-link-sent')
+                                        <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
+                                            {{ __('Um novo link de verificação foi enviado ao seu e-mail.') }}
+                                        </p>
+                                        @endif
+                                    </div>
+                                    @endif
+                                </div>
+                                <x-input-label for="password" :value="__('Nova Senha')" />
+                                <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
+                                    required autocomplete="new-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
                             </div>
-                            @endif
-                        </div>
-                        <div>
-                            <x-input-label for="password" :value="__('Nova Senha')" />
-                            <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
-                                autocomplete="new-password" />
-                            <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
-                        </div>
-                        <div class="mb-4">
-                            <label for="access_level"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nível de
-                                Acesso:</label>
-                            <select id="access_level" name="access_level"
-                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option value="admin" @if($user->access_level == 'admin') selected
-                                    @endif>Administrador</option>
-                                <option value="visitor_management" @if($user->access_level == 'visitor_management')
-                                    selected
-                                    @endif>Gestor de Visitantes</option>
-                                <option value="prisioner_management" @if($user->access_level ==
-                                    'prisioner_management') selected
-                                    @endif>Gestor de Detentos</option>
-                            </select>
-                        </div>
-
-                        <div class="flex items-center gap-4">
+                            <div class="mb-4">
+                                <label for="access_level"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nível de
+                                    Acesso:</label>
+                                <select id="access_level" name="access_level"
+                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option value="admin" @if($user->access_level == 'admin') selected
+                                        @endif>Administrador</option>
+                                    <option value="visitor_management" @if($user->access_level == 'visitor_management')
+                                        selected
+                                        @endif>Gestor de Visitantes</option>
+                                    <option value="prisioner_management" @if($user->access_level ==
+                                        'prisioner_management') selected
+                                        @endif>Gestor de Detentos</option>
+                                </select>
+                            </div>
                             <a href="{{ route('user.management') }}"
                                 class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</a>
+
                             <button type="submit"
                                 class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Salvar
                                 Alterações</button>
-                        </div>
-                    </form>
+                        </form>
+                    </section>
                 </div>
             </div>
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
@@ -159,6 +184,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </x-app-layout>

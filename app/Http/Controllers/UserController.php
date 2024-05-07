@@ -58,6 +58,33 @@ class UserController extends Controller
         $user->update($validatedData);
         return redirect()->route('user.management')->with('success', 'Informações do usuário atualizadas com sucesso!');
     }
+    public function updatePersonalInfo(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'document' => 'required|string|max:20',
+            'phone' => 'required|string|max:25',
+        ]);
+
+        $user->update($validatedData);
+
+        return redirect()->route('user.management')->with('success', 'Informações pessoais do usuário atualizadas com sucesso!');
+    }
+
+    public function updatePasswordAndAccess(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'password' => 'required|string|min:8',
+            'access_level' => 'required|in:admin,visitor_management,prisioner_management',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']); // Hashing the password
+
+        $user->update($validatedData);
+
+        return redirect()->route('user.management')->with('success', 'Senha e nível de acesso do usuário atualizados com sucesso!');
+    }
     
     public function destroy(User $user)
     {

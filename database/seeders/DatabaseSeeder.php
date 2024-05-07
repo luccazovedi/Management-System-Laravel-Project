@@ -7,7 +7,7 @@ use App\Models\Visitor;
 use App\Models\Employee;
 use App\Models\Prisioner;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+use Faker\Generator as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,30 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {   
-        Visitor::factory(10)->create();
         Employee::factory(3)->create();
-        Prisioner::factory(5)->create();
-        User::factory()->create([
-            'name' => 'Usuário',
-            'lastname' => 'Admin',
-            'email' => 'admin@email',
-            'password' => Hash::make('senha123'),
-            'access_level' => 'admin',
-        ]);
-        User::factory()->create([
-            'name' => 'Usuário',
-            'lastname' => 'Gestor de Visitantes',
-            'email' => 'visitor@email',
-            'password' => Hash::make('senha123'),
-            'access_level' => 'visitor_management',
-        ]);
-        User::factory()->create([
-            'name' => 'Usuário',
-            'lastname' => 'Gestor de Detentos',
-            'email' => 'prisioner@email',
-            'password' => Hash::make('senha123'),
-            'access_level' => 'prisioner_management',
-        ]);
+        User::factory(1)->create();
+        $prisioners = Prisioner::factory(5)->create();
+        foreach ($prisioners as $prisioner) {
+            Visitor::factory()->create(['prisioner_id' => $prisioner->id]);
+        }
         
     }
 }
