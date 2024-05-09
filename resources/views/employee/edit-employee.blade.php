@@ -92,15 +92,18 @@
                         <div class="mb-4">
                             <label for="role"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Função:</label>
-                            <select id="role" name="role" onchange="toggleOtherField()" value="{{ $employee->role }}"
+                            <select id="role" name="role" required
                                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option value="Segurança">Segurança</option>
-                                <option value="Cozinha">Cozinheiro(a)</option>
-                                <option value="Zelo">Zelador(a)</option>
-                                <option value="Outro">Outro</option>
+                                <option value="Segurança" {{ $employee->role === 'Segurança' ? 'selected' : '' }}>
+                                    Segurança</option>
+                                <option value="Cozinheiro" {{ $employee->role === 'Cozinheiro' ? 'selected' : '' }}>
+                                    Cozinheiro(a)</option>
+                                <option value="Zelador" {{ $employee->role === 'Zelador' ? 'selected' : '' }}>Zelador(a)
+                                </option>
+                                <option value="Outro" {{ $employee->role === 'Outro' ? 'selected' : '' }}>Outro</option>
                             </select>
                         </div>
-                        <div class="mb-4" id="other" style="display: none;">
+                        <div class="mb-4" id="other">
                             <label for="other"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Especifique:</label>
                             <input type="text" id="other" name="other" value="{{ $employee->other }}"
@@ -110,21 +113,28 @@
                             <label for="date_admission"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Data de
                                 Admissão:</label>
-                            <input type="date" id="date_admission" name="date_admission" value="{{ $employee->date_admission }}"
+                            <input type="date" id="date_admission" name="date_admission"
+                                value="{{ $employee->date_admission }}"
                                 class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
                         </div>
                         <div class="mb-4">
                             <label for="salary"
                                 class="block text-sm font-medium text-gray-700 dark:text-gray-300">Salário:</label>
-                            <input type="number" id="salary" name="salary" value="{{ $employee->salary }}"
-                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-md">
+                            <div class="flex">
+                                <span
+                                    class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                                    R$
+                                </span>
+                                <input type="number" id="salary" name="salary" value="{{ $employee->salary }}" required
+                                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none sm:text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
+                            </div>
                         </div>
                         <a href="{{ route('employee.management') }}"
                             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</a>
 
                         <button type="submit"
-                            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Inserir
-                            Funcionário</button>
+                            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Salvar
+                            Alterações</button>
                     </form>
                 </div>
             </div>
@@ -188,6 +198,20 @@
     </div>
 </x-app-layout>
 <script>
+function toggleOtherField() {
+    var roleSelect = document.getElementById('role');
+    var otherRoleField = document.getElementById('other');
+
+    if (roleSelect.value === 'Outro') {
+        otherRoleField.style.display = 'block';
+    } else {
+        otherRoleField.style.display = 'none';
+    }
+    toggleOtherField();
+    roleSelect.addEventListener('change', toggleOtherField);
+    
+}
+
 function searchCEP() {
     var zipcode = document.getElementById('zipcode').value;
     fetch('https://viacep.com.br/ws/' + zipcode + '/json/')

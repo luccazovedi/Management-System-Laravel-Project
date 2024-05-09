@@ -34,16 +34,17 @@ class EmployeeController extends Controller
             'city' => 'nullable|string|max:255',
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
-            'role' => 'nullable|in:Zelador, Cozinheiro, Motorista, Secretário, Outro',
+            'role' => 'nullable|in:Zelador,Cozinheiro,Motorista,Outro',
             'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
             'salary' => 'nullable|integer',
+            'updated_at' => 'nullable|timestamp',
+            'created_at' => 'nullable|timestamp'
         ]);
 
         Employee::create($validatedData);
         return redirect()->route('employee.management')->with('success', 'Funcionário criado com sucesso!');
     }
-
     public function edit(Employee $employee)
     {
         return view('employee.edit-employee', compact('employee'));
@@ -65,10 +66,12 @@ class EmployeeController extends Controller
             'city' => 'nullable|string|max:255',
             'state' => 'nullable|string|max:100',
             'country' => 'nullable|string|max:100',
-            'role' => 'nullable|in:Zelador, Cozinheiro, Motorista, Secretário, Outro',
+            'role' => 'nullable|in:Zelador,Cozinheiro,Motorista,Outro',
             'other' => 'nullable|string|max:100',
             'date_admission' => 'nullable|date',
             'salary' => 'nullable|integer',
+            'updated_at' => 'nullable|timestamp',
+            'created_at' => 'nullable|timestamp'
         ]);
 
         $employee->update($validatedData);

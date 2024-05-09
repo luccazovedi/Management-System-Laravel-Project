@@ -54,8 +54,8 @@
                             <select id="access_level" name="access_level"
                                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-gray-700 dark:text-gray-100 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option value="admin">Administrador</option>
-                                <option value="visitor_management">Gestor de Detento</option>
-                                <option value="prisioner_management">Gestor de Visitante</option>
+                                <option value="visitor_management">Gestor de Visitante</option>
+                                <option value="prisioner_management">Gestor de Detento</option>
                             </select>
                         </div>
                         <a href="{{ route('user.management') }}"

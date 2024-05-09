@@ -71,7 +71,6 @@ class PrisionerController extends Controller
             'crime' => 'nullable|string|max:255',
             'updated_at' => 'nullable|timestamp',
             'created_at' => 'nullable|timestamp'
-
         ]);
 
         $prisioner->update($validatedData);

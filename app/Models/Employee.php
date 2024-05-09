@@ -27,5 +27,7 @@ class Employee extends Model
         'other',
         'date_admission',
         'salary',
+        'updated_at',
+        'created_at'
     ];
 }

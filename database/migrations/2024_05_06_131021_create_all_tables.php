@@ -15,20 +15,20 @@ class CreateAllTables extends Migration
     public function up()
     {
         Schema::create('cache', function (Blueprint $table) {
-            $table->string('key')->primary();
+            $table->string('key', 191 )->primary();
             $table->mediumText('value');
             $table->integer('expiration');
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
-            $table->string('key')->primary();
+            $table->string('key', 191)->primary();
             $table->string('owner');
             $table->integer('expiration');
         });
 
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
+            $table->string('uuid', 191)->unique();
             $table->text('connection');
             $table->text('queue');
             $table->longText('payload');
@@ -47,12 +47,12 @@ class CreateAllTables extends Migration
         });
 
         Schema::create('job_batches', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->string('id', 191)->primary();
             $table->string('name');
             $table->integer('total_jobs');
             $table->integer('pending_jobs');
             $table->integer('failed_jobs');
-            $table->longText('failed_job_ids');
+            $table->longText('failed_job_ids', 191);
             $table->mediumText('options')->nullable();
             $table->integer('cancelled_at')->nullable();
             $table->integer('created_at');
@@ -60,7 +60,7 @@ class CreateAllTables extends Migration
         });
 
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->string('id', 191)->primary();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent');
@@ -69,8 +69,8 @@ class CreateAllTables extends Migration
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
+            $table->string('email', 191)->primary();
+            $table->string('token', 191);
             $table->timestamp('created_at')->nullable();
         });
 
@@ -110,12 +110,12 @@ class CreateAllTables extends Migration
             $table->string('city', 100)->nullable();
             $table->string('state', 100)->nullable();
             $table->string('country', 100)->nullable();
-            $table->enum('role', ['Zelador, Cozinheiro, Motorista, Secretário, Outro'])->nullable();
+            $table->enum('role', ['Zelador', 'Cozinheiro', 'Motorista','Outro'])->nullable();
             $table->string('other', 100)->nullable();
             $table->date('date_admission')->nullable();
             $table->integer('salary')->nullable();
             $table->timestamps();
-        });
+        });        
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -123,7 +123,7 @@ class CreateAllTables extends Migration
             $table->string('lastname');
             $table->string('document', 20)->nullable();
             $table->string('phone', 20)->nullable();
-            $table->string('email')->unique();
+            $table->string('email', 191)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('access_level', ['admin', 'visitor_management', 'prisioner_management']);
@@ -153,6 +153,16 @@ class CreateAllTables extends Migration
 
             $table->foreign('prisioner_id')->references('id')->on('prisioners')->onDelete('cascade');
         });
+
+        User::create([
+            'name' => 'Admin',
+            'lastname' => 'Admin',
+            'document' => '000.000.000-00',
+            'phone' => '(00) 00000-0000',
+            'email' => 'admin@email',
+            'password' => bcrypt('senha123'),
+            'access_level' => 'admin',
+        ]);
     }
 
     /**
