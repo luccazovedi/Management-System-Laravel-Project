@@ -43,7 +43,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $employee->document }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $employee->role === 'Outros' ? $other : $employee->other }}</td>
+                                            {{ $employee->role === 'Outros' ? $other : $employee->role }}</td>
                                         <td
                                             class="px-5 py-5 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm flex-space-around">
                                             <a href="{{ route('employee.edit', $employee->id) }}"
