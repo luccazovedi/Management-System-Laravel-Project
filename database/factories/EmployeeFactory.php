@@ -29,7 +29,7 @@ class EmployeeFactory extends Factory
             'city' => $this->faker->city,
             'state' => $this->faker->state,
             'country' => $this->faker->country,
-            'role' => $this->faker->jobTitle,
+            'role' => $this->faker->randomElement(['Zelador', 'Cozinheiro', 'Motorista', 'Outro']),
             'other' => $this->faker->sentence,
             'date_admission' => $this->faker->dateTimeBetween('-5 years', 'now'),
             'salary' => $this->faker->randomFloat(2, 1000, 10000),

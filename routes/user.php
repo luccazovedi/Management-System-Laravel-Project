@@ -8,7 +8,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/users',                               [UserController::class, 'store'])->name('user.store');
     Route::get('/users/create',                         [UserController::class, 'create'])->name('user.create');
     Route::put('/users/updatePersonalInfo/{user}',      [UserController::class, 'updatePersonalInfo'])->name('user.updatePersonalInfo');
-    Route::put('/users/updatePasswordAndAccess/{user}', [UserController::class, 'updatePasswordAndAccess'])->name('user.updatePasswordAndAccess');
+    Route::put('/users/updatePassword/{user}',          [UserController::class, 'updatePassword'])->name('user.updatePassword');
+    Route::put('/users/updateAccess/{user}',            [UserController::class, 'updateAccess'])->name('user.updateAccess');
     Route::get('/users/{user}/edit',                    [UserController::class, 'edit'])->name('user.edit');
     Route::delete('/users/{user}',                      [UserController::class, 'destroy'])->name('user.destroy');
 });

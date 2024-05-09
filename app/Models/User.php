@@ -16,10 +16,12 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
+        'password_temp',
         'access_level',
     ];
     protected $hidden = [
         'password',
+        'password_temp',
         'remember_token',
     ];
     protected function casts(): array

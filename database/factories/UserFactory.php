@@ -25,6 +25,7 @@ class UserFactory extends Factory
             'email' => 'admin@email',
             'email_verified_at' => now(),
             'password' => Hash::make('senha123'),
+            'access_level' => 'admin',
             'remember_token' => $this->faker->randomAscii,
         ];
         

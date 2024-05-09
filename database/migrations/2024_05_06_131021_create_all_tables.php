@@ -155,11 +155,11 @@ class CreateAllTables extends Migration
         });
 
         User::create([
-            'name' => 'Admin',
-            'lastname' => 'Admin',
-            'document' => '000.000.000-00',
-            'phone' => '(00) 00000-0000',
-            'email' => 'admin@email',
+            'name' => 'Lucca',
+            'lastname' => 'Zovedi',
+            'document' => '48927668871',
+            'phone' => '17996262502',
+            'email' => 'luccazovedi@gmail.com',
             'password' => bcrypt('senha123'),
             'access_level' => 'admin',
         ]);
