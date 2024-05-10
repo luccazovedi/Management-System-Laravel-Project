@@ -1,0 +1,236 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost\/laravel-api\/public"
+        }
+    ],
+    "info": {
+        "name": "Prisioner API Documentation",
+        "_postman_id": "047e7e10-bf65-4be2-a949-dfee758a4db5",
+        "description": "api documentation for prisioner management system",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImlPMG5XaFhMS3BoSEFuY2VnaS9TNlE9PSIsInZhbHVlIjoiUDNYcTVLY0x3YjFGMlM5NnRkUHV6NW0wbFJiZjZVMGJOTER4L2xpcU4wWGhGU0lLb08rYVFHUS9lOTFZVjhDbXVEbDM3dzdFL2g4Q2NPQUx1L1BUWU1iRXJ2V1RzNThZWm1SOUZuOEFDc21sRW9GaGY5S2o0L0J0NTV0b3lGSTUiLCJtYWMiOiI2ZTFmOTM5YjhlODlkMjZhMWZkODBlYWM4NDQ4YjJlZTdhOWU3NjMwMDZiMjRiYWEzMmE4ZDRjMDM2MGM5NDFmIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlN2Q0ppelpvVExTZ3VmOTUrTDBRV3c9PSIsInZhbHVlIjoibUQ4c2UySWJKbXBNM1JlTU1NK2xpZkIvRDVpM2p5VGVYenpJSlA5OHhCTzFqSDYxd3hkbVVCWHRPUEZ6WnFybTlyNWtlSFJGSEJxSXVlN25sWTl3RjdpRkhDTHRjU0cweU44ek5sVHR1dXkzdENCMmp0ckxGbnpsWG13a2pjY2MiLCJtYWMiOiI0MmYxM2U3NTA1OWM5YjNjNmNiZmI2YmE0NmFmZGJhZDRkNTJhMTJkZDY3YWE4NTk1N2I2ODRmOWYyYTk0ZTQxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/employees",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6Ingra2hrL1F2eWF1bC9ZRmxIeHpaUkE9PSIsInZhbHVlIjoiYkFPNjJXMUdSY003L3R1K3FEV3p2SERMVjNDZVpacE1mVVdVVGlINEE0Wmp1bEpxdkNwWGdZcUlBRG14U3FQSFBHdnYxcklLVkx5ZVN3dndrV2tpczVkaytVYjJEcEZBbWR0TGpEeWlMWXM3NGQ3UEFEV2NxUk4yMVFrczVQMFkiLCJtYWMiOiIxMGYxOTllY2U0MzYyMDg3NDAyOTRkYzQ5MjZlMDg4OWMwZDk4MmM4YmVhNmNmNGIwNjYyZGJjMTU4YmQxYzE3IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IkxpR0ZqUkpiemRkSjVCOXEvamhrM0E9PSIsInZhbHVlIjoiQk41TDdsa1ltYWlQZ3BWU1NKZ0tWSXNaQlV3OWpNWmoyenFTcnY0MHBmcWYzaXZHc0c3Z2xMQ2dYWVhTYW1wc2UwV1ZXcGxOQWJodWdXMU1lM1BFRFk2RTZjc2FMYlNTWVA2cHRRbnYwRVVmNXcwUU9GRkFlVElhYVdiaTUvdCsiLCJtYWMiOiI0N2QxYzI1ZDA4ZjQwMTZkNGQyYTA1NDFjMDUxMTI1NzgzNGMzYmQ0MmZmMDFkMTU0MGI3NWFmZDkxYWY3NDQ5IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/prisioners",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/prisioners",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/prisioners"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjZlZEhGTzNWd1cvNmJDTmpaV2YxR1E9PSIsInZhbHVlIjoiL1djdTArZ1BCRDFBTHNncFVNaDRiVnlwcTdqWHpZRG0xa0M0UnZSWUZwTEtWQzZ2cVJiamFxTkJXMTU1WThQb09yUjNPNDF2aktibmVtNFV4NUk0OFIxc055VmtZV2NodmNVN2htK0NwY2FUTVdleEZ3aFRNTXBBdmhmbFl0dmsiLCJtYWMiOiJhMmU1MWMwYjZiY2UxYjJjZTA2ZDRmMTZjN2IwM2Q5ZDNjOTk1MTNiZTg2ZDQwN2QyMTBjZjg4NjIwNzBkMjQxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlpFSlZFOTJ2VHZNamtUSHZ1VlFCYkE9PSIsInZhbHVlIjoiTmN5dFk0eEw0WDg4N2FnbDkrUUJUSTlQMUx4cGlNMUI4U3hzaXV5VkhuUkJhSHRvc2FudkYyTHFpcTRrRzJhdmxuMnNJYTFtMWVOYmFYUVR6eWN5ZEN3L2YvUVBaOFdqK1gvMXFTcmlTa1JGNkFGTFlpZi9EaVhNQ0JwanU4R3IiLCJtYWMiOiJlNmY2NjIzMDgzYzhlZDRkMzIxN2RiYTQ2OTcxMmJkYzA2YzYyMDBkYmMwZDY2MjI0Yjk3ZGY1NGJiNzk0MzU1IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/visitors",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/visitors",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/visitors"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkxuZkpIV1lSZS9MTHVuMFVzUm1VbVE9PSIsInZhbHVlIjoibVJna2ZCcGRrUUhwTDhtbnBoVWNiMEl1MEluZVBjcW5TSXNhcmoxamNHa2NkRXZCTXBKU0NlaC91a0tRNlduZVZsaFhMRnFlOVpMTzExM1d2QTFGcE93RklJdUxqSnVmcldmZU1Sc09TOGZJNXZoRkdEMWw4am1XZnBBYU9Cc0EiLCJtYWMiOiI3NzIwYmZiNGVhOGUwOGRkODFjZmQ3ZDViNmFmMGNhY2UwZjUwMjdhMjY5NTM1MTdiYzBmMWM5NmQyODk5OGMxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlpKNGtYS01JMHVQMmR3WTBIOEFtaFE9PSIsInZhbHVlIjoiZitlYUdlS3FLRFBQeEs5MG14UG1ycTl2eVdmOHQ4anpEc1BQTzVRRndSNlIxSlpzSFpEUDZUa0dmSjdoWTA0RDZVSEY5N3dXWTA5TGZwZWZMTGtZUmR3UTA2ekdHNDZYZmh2Sm5UVFcxQVhkc0xlTUkvd2FONUFnTFpuOFI0YXQiLCJtYWMiOiI3NDRkNWM0ZTMxNDBlYWRhMDBmOTRhNzg5MDIyN2JkMzVkYjk3YzE0ZGFlNWYwYjNkNzgzMGQ0Y2VjZDlmMzI0IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

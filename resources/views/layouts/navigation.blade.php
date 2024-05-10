@@ -39,42 +39,10 @@
                         {{ __('Funcionários') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button
-                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ __('API') }}</div>
-
-                                <div class="ml-1">
-                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10 12a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L10 9.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-.707.293z" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('api.users')" :active="request()->routeIs('api.users')">
-                                {{ __('Usuários') }}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('api.employees')"
-                                :active="request()->routeIs('api.employees')">
-                                {{ __('Funcionários') }}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('api.prisioners')"
-                                :active="request()->routeIs('api.prisioners')">
-                                {{ __('Detentos') }}
-                            </x-dropdown-link>
-
-                            <x-dropdown-link :href="route('api.visitors')" :active="request()->routeIs('api.visitors')">
-                                {{ __('Visitantes') }}
-                            </x-dropdown-link>
-                        </x-slot>
-                    </x-dropdown>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="./docs">
+                        {{ __('API') }}
+                    </x-nav-link>
                 </div>
             </div>
             <!-- Settings Dropdown -->
@@ -142,7 +110,8 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}{{ Auth::user()->lastname }}</div>
+                <div class="font-medium text-base text-gray-800 dark:text-gray-200">
+                    {{ Auth::user()->name }}{{ Auth::user()->lastname }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
