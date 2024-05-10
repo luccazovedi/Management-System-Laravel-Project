@@ -5,13 +5,13 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost\/laravel-api\/public"
+            "value": "http:\/\/localhost"
         }
     ],
     "info": {
         "name": "Prisioner API Documentation",
-        "_postman_id": "047e7e10-bf65-4be2-a949-dfee758a4db5",
-        "description": "api documentation for prisioner management system",
+        "_postman_id": "fc7d38c7-a7a3-4c16-8502-037df37eef3e",
+        "description": "Documenta\u00e7\u00e3o da API para o Sistema de Gerenciamento de Prisioneiros\n    Esta documenta\u00e7\u00e3o tem como objetivo fornecer todas as informa\u00e7\u00f5es necess\u00e1rias para trabalhar com nossa API.\n\n    Conforme voc\u00ea rola, ver\u00e1 exemplos de c\u00f3digo para trabalhar com a API em diferentes linguagens de programa\u00e7\u00e3o \n    na \u00e1rea escura \u00e0 direita (ou como parte do conte\u00fado em dispositivos m\u00f3veis).\n\n    Voc\u00ea pode alternar a linguagem usada com as guias no canto superior direito (ou no menu de navega\u00e7\u00e3o no canto \n    superior esquerdo em dispositivos m\u00f3veis).",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6ImlPMG5XaFhMS3BoSEFuY2VnaS9TNlE9PSIsInZhbHVlIjoiUDNYcTVLY0x3YjFGMlM5NnRkUHV6NW0wbFJiZjZVMGJOTER4L2xpcU4wWGhGU0lLb08rYVFHUS9lOTFZVjhDbXVEbDM3dzdFL2g4Q2NPQUx1L1BUWU1iRXJ2V1RzNThZWm1SOUZuOEFDc21sRW9GaGY5S2o0L0J0NTV0b3lGSTUiLCJtYWMiOiI2ZTFmOTM5YjhlODlkMjZhMWZkODBlYWM4NDQ4YjJlZTdhOWU3NjMwMDZiMjRiYWEzMmE4ZDRjMDM2MGM5NDFmIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlN2Q0ppelpvVExTZ3VmOTUrTDBRV3c9PSIsInZhbHVlIjoibUQ4c2UySWJKbXBNM1JlTU1NK2xpZkIvRDVpM2p5VGVYenpJSlA5OHhCTzFqSDYxd3hkbVVCWHRPUEZ6WnFybTlyNWtlSFJGSEJxSXVlN25sWTl3RjdpRkhDTHRjU0cweU44ek5sVHR1dXkzdENCMmp0ckxGbnpsWG13a2pjY2MiLCJtYWMiOiI0MmYxM2U3NTA1OWM5YjNjNmNiZmI2YmE0NmFmZGJhZDRkNTJhMTJkZDY3YWE4NTk1N2I2ODRmOWYyYTk0ZTQxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImdsUm0rWU1DaFpIOUVja1BGVEZBUWc9PSIsInZhbHVlIjoiMGcydW8wSVpUUzVuVzVZbXhUOVE1TktlTm9iTnRrQm1xS1NnTEhDTFhzNkFYbjZlMzNSUThtZkF6dC94YmwzcytNVUZWSEdJeHE4Z1JoV2lOaEhZcHRXb0x2R2FGeWk1L1VzaElUbGV4K3pwZXFYMW4rMHExSWVFMjZsQXJndFYiLCJtYWMiOiJlNDg5MjExZTZjYTVlYWY5ZDc0NmRiM2NlY2E0YmE4N2U3MmMzZGIyN2IzNzAwMmJiYmY4MmExMGUxMzFjZmJlIiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlBqZk9BK2w2d0Y1c2k4L0VsZXhKSEE9PSIsInZhbHVlIjoiUWNFemsrSEdONzVraFdVV1NxdWtxUy93RHZyZlo4KzNDU3ZwcDdKVDVDcE1uampYTkpXajFaS1pmTzEreXJqd2FDZTdMNDM0TTBCS0RBZnNreGpPVjBmSWtlRFBWOWlNZ2lxM1Z2eE9QMTl0ZWxZd1VxVGVIRkx6aGtEejVXOWkiLCJtYWMiOiJjOTI2ZDFkOGFkZmE4ZGIyMThlN2Q1MTg1ZDVkYzFjNzg2NDg2ZjIxNzE3ZWU5NjE5MzA2YmE1Y2NmZTVlZTkxIiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -114,7 +114,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Ingra2hrL1F2eWF1bC9ZRmxIeHpaUkE9PSIsInZhbHVlIjoiYkFPNjJXMUdSY003L3R1K3FEV3p2SERMVjNDZVpacE1mVVdVVGlINEE0Wmp1bEpxdkNwWGdZcUlBRG14U3FQSFBHdnYxcklLVkx5ZVN3dndrV2tpczVkaytVYjJEcEZBbWR0TGpEeWlMWXM3NGQ3UEFEV2NxUk4yMVFrczVQMFkiLCJtYWMiOiIxMGYxOTllY2U0MzYyMDg3NDAyOTRkYzQ5MjZlMDg4OWMwZDk4MmM4YmVhNmNmNGIwNjYyZGJjMTU4YmQxYzE3IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IkxpR0ZqUkpiemRkSjVCOXEvamhrM0E9PSIsInZhbHVlIjoiQk41TDdsa1ltYWlQZ3BWU1NKZ0tWSXNaQlV3OWpNWmoyenFTcnY0MHBmcWYzaXZHc0c3Z2xMQ2dYWVhTYW1wc2UwV1ZXcGxOQWJodWdXMU1lM1BFRFk2RTZjc2FMYlNTWVA2cHRRbnYwRVVmNXcwUU9GRkFlVElhYVdiaTUvdCsiLCJtYWMiOiI0N2QxYzI1ZDA4ZjQwMTZkNGQyYTA1NDFjMDUxMTI1NzgzNGMzYmQ0MmZmMDFkMTU0MGI3NWFmZDkxYWY3NDQ5IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjRoWmVSRVR3dlhkaG1IWTY1UEZ3TFE9PSIsInZhbHVlIjoibmJDZGM1YWdFOGZHTTk1ZVBPT3A3a1ZYNDJ6SnAwMExhcjFNKy9HZTk0QktFVGRtd1dHQkIrK2ZIUnd1QzVZZ010UmV4S0RLV0wrMkFnRWg5UjlhZG1sNkY2VnIwWUpZdU9kNFEyNjIrRFJMZ29aZFRuMzMzNVJQZHpnQ1FxU2kiLCJtYWMiOiJlNzIxMzc0YzdhYTc1ZGEzNGJhY2FjMzE5ZDNkOTgxNjhhYmE0YjhmNmZkYmIxMTFiZjg3ZjI2OWZmOTk1ZGQ3IiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IkhTdURSOHNvWlVicWw5eGFwLzJlVFE9PSIsInZhbHVlIjoidFFldGM2aHpyZmU2N2wxY3ZOUk9kZTcvcWlrTDJhY3RNT0xFMlZhZFExODVIZjAzUFNjdlIwLy9iVHNsTEkrWnBpMll2UWp0TFFrd0N2RlhqT3RJamUyYkdqbmFYd0tyZ2RncTRzMEFJbFBaQkNCSHUzcWM3MFhicS9VcXljeXQiLCJtYWMiOiI4ZWUxNDE5MDQxZDExZDNhOTNlYjU0YzYyYTdlZTgyZTVlNDkxOGRkNzY0NWJmNjBhNjRlODczZTY4ZGJlNTc4IiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -166,7 +166,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjZlZEhGTzNWd1cvNmJDTmpaV2YxR1E9PSIsInZhbHVlIjoiL1djdTArZ1BCRDFBTHNncFVNaDRiVnlwcTdqWHpZRG0xa0M0UnZSWUZwTEtWQzZ2cVJiamFxTkJXMTU1WThQb09yUjNPNDF2aktibmVtNFV4NUk0OFIxc055VmtZV2NodmNVN2htK0NwY2FUTVdleEZ3aFRNTXBBdmhmbFl0dmsiLCJtYWMiOiJhMmU1MWMwYjZiY2UxYjJjZTA2ZDRmMTZjN2IwM2Q5ZDNjOTk1MTNiZTg2ZDQwN2QyMTBjZjg4NjIwNzBkMjQxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlpFSlZFOTJ2VHZNamtUSHZ1VlFCYkE9PSIsInZhbHVlIjoiTmN5dFk0eEw0WDg4N2FnbDkrUUJUSTlQMUx4cGlNMUI4U3hzaXV5VkhuUkJhSHRvc2FudkYyTHFpcTRrRzJhdmxuMnNJYTFtMWVOYmFYUVR6eWN5ZEN3L2YvUVBaOFdqK1gvMXFTcmlTa1JGNkFGTFlpZi9EaVhNQ0JwanU4R3IiLCJtYWMiOiJlNmY2NjIzMDgzYzhlZDRkMzIxN2RiYTQ2OTcxMmJkYzA2YzYyMDBkYmMwZDY2MjI0Yjk3ZGY1NGJiNzk0MzU1IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlpkbFVSNU9mNlpwTld1TTBNMkVjYWc9PSIsInZhbHVlIjoid1poZm13NXNTdTV6TG1HQlBJdkZTNS83WWlocVNCNTJZeWp2UWpwYUVCNWpGdkQyN2NKb2sxem5zQUk1Wkc0ZnlMd3dyeG95ZW91YWN2eGh0Lyt2QUoxQjRUaU5ERHY5V0ZFbUtZbkdFazN3RWxzc2JxTmJGNldPYy8zbndraVEiLCJtYWMiOiIxM2ZjYzFiZWI4Mjc3NTMyY2FhYTY3OTZlYWZkMDhhMTEyY2JlYTdlYjRlYjk1YjU0Yzk4MjQwZDgzZGZlMjNjIiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IkxjSnNkNHZpcTVJSGlMOWdQRjlJM2c9PSIsInZhbHVlIjoiN1hSSm5iNGVCUG11UWw1VkZobHorVWR2bXVSbnNhNkVHaTZzZ09heTltVlc3YUx5UFh5ZjZqd0RxTmdSNm9rRlJud0xhT3k0SFpEL1dTOFQ2bG5lZDFpZXR6WTIyZVlaVlR5Y3A3cmxjQ1lRL1pRVGo1a0ZYZHNTRU5wSFplU0YiLCJtYWMiOiJkOTcyNjVlZmFiYWQ0YzdjYWRmOWI2MjYyOTFjYjNlYTQzZTE0YjY3ODczOWVlNjdhNjVjZTc4MmVjYWQzYzc5IiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -218,7 +218,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkxuZkpIV1lSZS9MTHVuMFVzUm1VbVE9PSIsInZhbHVlIjoibVJna2ZCcGRrUUhwTDhtbnBoVWNiMEl1MEluZVBjcW5TSXNhcmoxamNHa2NkRXZCTXBKU0NlaC91a0tRNlduZVZsaFhMRnFlOVpMTzExM1d2QTFGcE93RklJdUxqSnVmcldmZU1Sc09TOGZJNXZoRkdEMWw4am1XZnBBYU9Cc0EiLCJtYWMiOiI3NzIwYmZiNGVhOGUwOGRkODFjZmQ3ZDViNmFmMGNhY2UwZjUwMjdhMjY5NTM1MTdiYzBmMWM5NmQyODk5OGMxIiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlpKNGtYS01JMHVQMmR3WTBIOEFtaFE9PSIsInZhbHVlIjoiZitlYUdlS3FLRFBQeEs5MG14UG1ycTl2eVdmOHQ4anpEc1BQTzVRRndSNlIxSlpzSFpEUDZUa0dmSjdoWTA0RDZVSEY5N3dXWTA5TGZwZWZMTGtZUmR3UTA2ekdHNDZYZmh2Sm5UVFcxQVhkc0xlTUkvd2FONUFnTFpuOFI0YXQiLCJtYWMiOiI3NDRkNWM0ZTMxNDBlYWRhMDBmOTRhNzg5MDIyN2JkMzVkYjk3YzE0ZGFlNWYwYjNkNzgzMGQ0Y2VjZDlmMzI0IiwidGFnIjoiIn0%3D; expires=Fri, 10 May 2024 17:32:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkdzZzI1YUFyRVZWdnp2Nzh1eHpWcGc9PSIsInZhbHVlIjoiWkZUU3lSZmF4NXJUVjNlL29BQkh0Q2YwaGVZV09kU09hbmZNUUNjblhwKzc1bS9FaVVxT29IYjlNakJUN2hJNWZvUGI4VDNidDBmcG8xTG91Y2pTdEtYZThUWWFSSTYyM08vc2libTV6TFNpVEgxSUtXVmpNMEJPdGJscVVEc1giLCJtYWMiOiIyZTg4YTQ3MTEzY2VlM2Q2M2Y4MmYxODc0ZjM5ZjU2MDFhMjZlZjFhMzQwYjBiZjUwYjEzZTA5NjIzYTVkZDI3IiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6ImFmQXE5RUhHRTQwc3BpcjRoa29nT0E9PSIsInZhbHVlIjoiR0xLVEVrMjRSdHJ4OFd5emZNQ3gyMnUxYW9razNlcmNIVk1sZmJ3NTBuWHJKZUFiV2g2V0pXUUlKcWtVQjhqUERjRm5YMFB4ZVlCb0Y3VXhTZ0t2VXhZRCsvOEZFSmN0WHVZUUc1WmlyVkIvcUVYVVpjeFhpQlpFbkZEUlFzSmEiLCJtYWMiOiI2YTY2NWQ3NDY5ZjNhYWViYzljNTM4NjIxOGU4NzQ3NDkwOWZiY2YwYmMxYTM1OGI0MDhmZmI4NjgyYzQyZjA3IiwidGFnIjoiIn0%3D; expires=Sat, 11 May 2024 01:29:39 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,

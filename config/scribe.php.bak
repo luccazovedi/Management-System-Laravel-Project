@@ -184,4 +184,5 @@ return [
     'routeMatcher' => \Knuckles\Scribe\Matching\RouteMatcher::class,
 
     'base_url' => null,
+    
 ];

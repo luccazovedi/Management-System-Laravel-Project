@@ -1,11 +1,11 @@
 openapi: 3.0.3
 info:
   title: 'Prisioner API Documentation'
-  description: 'api documentation for prisioner management system'
+  description: "Documentação da API para o Sistema de Gerenciamento de Prisioneiros\n    Esta documentação tem como objetivo fornecer todas as informações necessárias para trabalhar com nossa API.\n\n    Conforme você rola, verá exemplos de código para trabalhar com a API em diferentes linguagens de programação \n    na área escura à direita (ou como parte do conteúdo em dispositivos móveis).\n\n    Você pode alternar a linguagem usada com as guias no canto superior direito (ou no menu de navegação no canto \n    superior esquerdo em dispositivos móveis)."
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost/laravel-api/public'
+    url: 'http://localhost'
 paths:
   /api/users:
     get:
