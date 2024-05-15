@@ -183,6 +183,5 @@ return [
 
     'routeMatcher' => \Knuckles\Scribe\Matching\RouteMatcher::class,
 
-    'base_url' => null,
-    
+    'base_url' => '127.0.0.1:8000',
 ];

@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+body.fixed-nav-padding {
+    padding-top: 64px; 
+}
+.live-indicator {
+    display: inline-block;
+    background-color: transparent;
+    position: relative;
+}
+
+.live-indicator span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.live-indicator::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 65px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}

@@ -13,7 +13,8 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-200">Total de Funcionários</h3>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-200">Total de Funcionários
+                        </h3>
                         <p class="text-4xl font-bold text-indigo-600">{{ $employeesCount }}</p>
                     </div>
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
@@ -21,7 +22,8 @@
                         <p class="text-4xl font-bold text-indigo-600">{{ $visitorsCount }}</p>
                     </div>
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-200">Total de Prisioneiros</h3>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-200">Total de Prisioneiros
+                        </h3>
                         <p class="text-4xl font-bold text-indigo-600">{{ $prisionersCount }}</p>
                     </div>
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
@@ -29,126 +31,211 @@
                         <p class="text-4xl font-bold text-indigo-600">{{ $usersCount }}</p>
                     </div>
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-                        <canvas id="myChart" width="400" height="200" style="margin-top:100px"></canvas>
+                        <canvas id="doughnutChart" width="400" height="200"></canvas>
                     </div>
                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                         <canvas id="pieChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                        <canvas id="lineChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                        <canvas id="radarChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                        <canvas id="bar" width="400" height="200" style="margin-top:100px"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
-                datasets: [{
-                    label: 'Total',
-                    data: [
-                        {{ $employeesCount }},
-                        {{ $visitorsCount }},
-                        {{ $prisionersCount }},
-                        {{ $usersCount }}
-                    ],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 205, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 205, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        var pieCtx = document.getElementById('pieChart').getContext('2d');
-        var pieChart = new Chart(pieCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
-                datasets: [{
-                    label: 'Total',
-                    data: [
-                        {{ $employeesCount }},
-                        {{ $visitorsCount }},
-                        {{ $prisionersCount }},
-                        {{ $usersCount }}
-                    ],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 205, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 205, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-
-    <style>
-        .live-indicator {
-            display: inline-block;
-            background-color: transparent;
-            position: relative;
-        }
-
-        .live-indicator span {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .live-indicator::after {
-            content: '';
-            position: absolute;
-            top: 15%;
-            left: 65px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: red;
-            animation: pulse 1s infinite alternate;
-        }
-
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-                opacity: 1;
-            }
-            to {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-    </style>
 </x-app-layout>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var doughnutCtx = document.getElementById('doughnutChart').getContext('2d');
+    var doughnutChart = new Chart(doughnutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
+            datasets: [{
+                    label: 'Total',
+                    data: [
+                        {{ $employeesCount }},
+                        {{ $visitorsCount }},
+                        {{ $prisionersCount }},
+                        {{ $usersCount }}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 205, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var barCtx = document.getElementById('bar').getContext('2d');
+    var barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
+            datasets: [{
+                label: 'Total',
+                data: [
+                    {{ $employeesCount }},
+                    {{ $visitorsCount }},
+                    {{ $prisionersCount }},
+                    {{ $usersCount }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var radarCtx = document.getElementById('radarChart').getContext('2d');
+    var radarChart = new Chart(radarCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
+            datasets: [{
+                label: 'Total',
+                data: [
+                    {{ $employeesCount }},
+                    {{ $visitorsCount }},
+                    {{ $prisionersCount }},
+                    {{ $usersCount }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+    var lineCtx = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
+            datasets: [{
+                label: 'Total',
+                data: [
+                    {{ $employeesCount }},
+                    {{ $visitorsCount }},
+                    {{ $prisionersCount }},
+                    {{ $usersCount }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+    var pieCtx = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Funcionários', 'Visitantes', 'Prisioneiros', 'Usuários'],
+            datasets: [{
+                label: 'Total',
+                data: [
+                    {{ $employeesCount }},
+                    {{ $visitorsCount }},
+                    {{ $prisionersCount }},
+                    {{ $usersCount }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    })
+</script>
