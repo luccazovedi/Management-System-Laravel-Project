@@ -34,9 +34,79 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkVJTHdmcGIyRW1BRVMzTDRSL1o4a0E9PSIsInZhbHVlIjoiRjBHSEd3dUI3ZW83TkxZVngvckZ0b3pyZXovbHlNUDI1RWI1ZWR5VFNsUXlEN2doQUE3bjRFa0xMYWlqVUJOcEdNWGVZa3Bjdk9vRTg1cUxtMlo2M1hsakhIL1BrV0xHZnl1SDdDYlk3OGR0aXB0V2RjeDQvMXBzemtlR1NZOHAiLCJtYWMiOiJlYTAxYzMzZmI5YzQ3ZjY3OTljNzgzODkzNDljYWU5NDRiOTk0ODExNjk3ODMwODdjZTRlZjg0NjU1YWRlYWM2IiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IlhOUmYvaGN4VmtvZjhHTHYwVkdsR0E9PSIsInZhbHVlIjoiQTBEd0pQQkpSM0FCTXVkdXpVdDd2V1FKVmZ6MFd5bEI3aHdzUjMzVDN6UmZMTUxXRS9uUW5keFgzRGpWSXJHclF0RUZ3VzdnaGxyNFplSkR0cy8xNVRwb3RwdFI3ZjhhZU5oWkN6TjBQa2hvaldNVzJnNmpVMGlKMXhzczlvNHgiLCJtYWMiOiJkZjNhZWIxNDYyNzQ4ODRmZWQ3MTAwNjYyZDAwZGMwMDM4OGNlNDdkOTRhMjJmNThlMjJlMjc4OTI1ZmFiNmMyIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkZqWlR3aGF4akd3MXgzTlVRY3Fob1E9PSIsInZhbHVlIjoiMG5ueTdyL3FQQjdHdHltdTRHK1dGNkVSQ3JNQXk2OElCRlJMZ3p4RlY2bXB6SEd1Q1NjTE9xbWZKeUR1UkdGdDE3UEhmUm96WVlYTXZPa0E1dGdRRkNzN0grZUdOZ1l6YTk4Q3VOQ0t2MmJDWUtrck9KRHgwcXlwai8yRkNCdlkiLCJtYWMiOiJjMGY5YTliMGJhYmUxZTI0MTJlODQxNzA5NmU2MzQ5MzM2NjJmODg2OTUwYTQ2YzVmNTI0ZWNmZTEyOTk4NGJhIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:07 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IjhZSE1jSE41bmFCT2NxV09UZlhEenc9PSIsInZhbHVlIjoiYU4xL2ZDNUI0NkM2dVNtN1VNMkYrRkV5NWpLczZYUi9BUXpRRlhYUWV5b1FIU3BScURacGVxZ0FGcElUTGJrMzFvQkFlRXd5eXRROXNHSC94SGNmREFUQkQxVjBHRUlieVpFTnN0WVV5dWRJYUxZWDhBQXFoUDJNMXJ4dEc0ZXUiLCJtYWMiOiJjYjYwOWM5YTdhMDQ1MWQyNDI4ZmM5Mjk1NWUyMjQwNmM2MzQzZWJhNmYzMzA4ZWVjNGUxMTdkOTVkYTk1YjBlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:07 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/users
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/users/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: ad
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: ad
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -74,9 +144,79 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImZpY1h5bk1udk81VXl2Z2RZRFYzbXc9PSIsInZhbHVlIjoiclArR2t3MHVzbXRvaE1vc0J4bTN4VnRoUU5TbnE1ZUxuVElnVmI4Mm9lbWN1SEtyV3ZDYTFGL0lZa0JlNjZXbncxVDVIVGI4dmVNaXlxaWVubGpYNU5QUUsxYUJneVVSTlBoWlFuREtDM0hFcnNKRW1lVFRTbnpWbXlQWDJFcm4iLCJtYWMiOiJiODY0ZGNkZjUyNjY2YWIxYmVhZGVkNGZkMjdiODRiYTY4YjYyNmY4MGNiNzQ0MDViODU1ZGU2ZDRiZDY2ZWJhIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IjB2SUVBMmttb2hVTEpObW00ZjFURGc9PSIsInZhbHVlIjoiTjFKMTZ4blM5NFNXMjh6OHRtUVVaZHZ6L2ptUEQ1bVB2YnRXR2N1L1M1eGpnQnhDUUpTMlREdEExMWNvWm9qWUxONWpEOU4yVC9Kalk3bElwTVp1WDhuSFlBa0s1QnFOYkRXMGhnVi9EalVCTk9TTkVRTFkvVHNReFpCY0UzV2ciLCJtYWMiOiI4MzY1YWE4NjRlZDY5ZjdhODZmMjc3NjFlMjdjMjBkYTM5N2UzOTFlYmZjMjI2NGE2ZmViMjhlYmMxNGVhYjRjIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlJtOTdqLzRFTGRhdDFGcDAyYmlJaGc9PSIsInZhbHVlIjoibkdOTm5LWXZLUmNDbE84WTVPaHQ2Y21pWFovTnJUU21GWllFNUNKK0RsSE9id05mL1hhTlNtTmNvd0s3aWdNenN3OHdVVkJaam9iWnFudytoR3lJdFlhNVVaeldiZmV0M3hZY0V1V3VoMUQ5MHpSREZUQmVJRXRYK2huVTg3UEUiLCJtYWMiOiJlNThmNjczYzEyZThjMjdkZTNkZmM2NDYzZjhkOTg2MGIxMDVmNmU1OTUzODcwYmFlM2U0OTJjMzVhMWNlZDRiIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6InV4eDhoVjA0ajVoR1czNVFBbVV2ZlE9PSIsInZhbHVlIjoiK01FV0tDMFRNckt0R1dFTVhLMFErblRjalNzRjRwUWZOclZLUXo0WDhkTk1PYkJhdUwvTThMd2ZGYzlaNkIyQUV3eVBoekhXZ2twVy9BbkhPYWF4QzZmdHNieVFvdWJwazM4OStNemJoMFBsdkxaMFkrVGpXQ3kreEliVE5tK0kiLCJtYWMiOiI2NzdlOTBhYmNmMDY0ZDZjMzQ3ZDA2NWU0MGZlNDFlMzg5OTk1NDA2ZTBkZDlhYmFjODUxY2ZhYjRiYjA5YzI3IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/employees
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/employees/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the employee.'
+        required: true
+        example: numquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: numquam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -114,9 +254,79 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjNaU0tvSkJSWkFUQ2FFSUsyakh6a3c9PSIsInZhbHVlIjoiY1JaZ3dMYnhkd2ZESVZ0VzRYQVdwdHhGdFM5K1ZuZGtDM2k3T3NuVFRwNzFHeXVwb1dMZ08xbGhPZmtzTWFhejA3WkwyNlhaMm9kZ3JPYUM2azNzN2VBUXpWRWs3ellMMittMDRBL0xxME54RjFnQTQ4bStGbVNhQnVNY3FGRkwiLCJtYWMiOiI3MTgyMDg4N2E5ZjZlMmE5NzUwOWIyOWQzM2Y1OGZmOTlhNWFhODIyZTgzN2ZhYmVjOTE3YzI5MWY4YTRjYjZjIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6InlYalpUTVJzVm44Vzg0UXhuT0JjUXc9PSIsInZhbHVlIjoiYTZBUzdPZ1IydnYzZ0g0NU01UklIMnBqWHNVWk9LRGhhZjNlQmcveHB0VWw4K2ticTl3WUs1NUVQQ3V3Z0ZTMGEvU1dTaTQxSkRUVDJYZ1JUTHFtYTl4cUNML0JTanRmT05vTFlTK2Nic0VFdDVrRGxUbERhdW5KM2E4SytYTDQiLCJtYWMiOiI0NTQ0ZWViZjVhZDBmYWVlMjdhZGFlOTU0Mzg4NzkzZGQ1YWI4ZDc2NzdlZWMwMDA4MTEzNWExNGJjYzUwNzI3IiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjRyNC9BY1h6bGlCSExwa2ZNWXhrN2c9PSIsInZhbHVlIjoiM1NSMFFvY2QrOTU0U3BHbGpFdGtjT2xWeS9rSnNuck90SURDVFRTcnpzTDIveDhoMUJ2K0RNRE9ZSzNVSU5TVXJldmgydFVGMWo1M1ZUQ2tjWU5iSGtYTGFWa21QK2ZublVSUjRXOXIwTjdyZTUzdC8vNFlTOWV0RVIvNTUzQ0YiLCJtYWMiOiI0ZTFjYzJmZGEzZGQ5OWU0ZmIzM2QwNTE4ZDhjNWFkZDBjN2I0YzU0Mjc3OTNjZDkyNDI1NWYxZTM2ODBlNWI1IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6ImpLQkFRWFZTMHA2OHhXTTFpd2pOK1E9PSIsInZhbHVlIjoiV0NpelVUQVNmN2tDTmZZbGszb09WczRFNlVRV3VLRGhxc1hYTkx6UjB6MFYzeHc1WW9KZVNYY0FWYitRMEJhay83anZySlh4dWMvUy9OWjVsSmNEaEdjNDZoZlNld1A4R3NFOFgyYkVNT0VvclBXQW1kdXVBTmQxMCs1NENvSzQiLCJtYWMiOiI3OTQ4N2MxMmRmNzU0NGFjMWI4MTY5ZDI3NDdiNWYzZWU4YTkwZjE2MDJmNzA0ZGZlNjE0MmM5OTFjNWVmOTM3IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/prisioners
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/prisioners/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the prisioner.'
+        required: true
+        example: cupiditate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: cupiditate
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -154,9 +364,79 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImZvOC9tOHowb2EzLzcyRkU0Rk90a1E9PSIsInZhbHVlIjoiYVVrTUJFS3BIcEZCUVcrTlkyeFlSQTJJdHJkdjE1VVp3OGRTU1BWb25Kazk3dUdZL1MxWmNtNTh1Ui9XRGJOZ09UTiszSFFPSnNmWGVreXVaSUFLbHJNZzlabUVuZnR5NHR3SjNyRW13VUdnQ0JuYjJjZEp3ZVhIQkplSkZYVWYiLCJtYWMiOiIzZjRhNWQ0YzZhOTc1ZTlmMTRjMTQxNGMxMDMwNWJmMzkyZGUxYTI2ODcyMTAyMmNlZGE4Y2NlNTdmNmRjNmQyIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6Inc2TDRiZk5NcmRMS1ZkWlAvcExtSmc9PSIsInZhbHVlIjoiVVBwWnRxU1U2STkrU2pwREdIU3JVYTJKSkZZem1sRlhveUZxbDZzQjZwMUZJQlBkbHp1MENMTWZObUJGbW4zZEViNWVBOGd6SkdjUHMvdW8xT2xLdy9YemxXeStXWmZBY05IR0dTWE9vZWVIWEVvTjhKSlNxdVdsb2hGekF2ckkiLCJtYWMiOiI1ZWZjZDU3ODVmMmU4NDUxZWVhZGIxMWM2NWM5ZDc1ZTFjMmM4ZTRjNjFhMGFmNDA1MDIzMjdmZmM0ODAwNTRmIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlpUUmZ3WG9FQitSZURPTkdVTFJya1E9PSIsInZhbHVlIjoiV2ZlRW96WmhvWXVhTjhtYmp3a2pJaTI2a0dIdGVHWlp4U3ZuZzZJR05abmd3ck15SWRpazM2M1dhQjVwOUxZbzN4T1gxcnlyWStqTkxmOXZRL2hIVHZZSGhLSnNxS0NrcmdlU3ZUWnIrTnlnWWdPV0tUUUFYQTJJaWdVaS9QWkgiLCJtYWMiOiJiODkwMzg1YjFiNWU2NzIwYmI0YWZlNmMxYmY5YTUzZjI5MmNhODQyMWY4MTA3M2Y1ZjM2MmJkZjhjNDAwNDEzIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:09 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IlZ0WmxwWFdFQjNveVJmc0NSNG40MkE9PSIsInZhbHVlIjoidG12SDZTanJjZFlRQ1NBTWhZUmVHTVZnTVNnSlpYb0lSdEppRW8xREZKMEhyQnFuLzdsY0lUV21JQWgzUWVNd0J4QWpFVGhNUit6dm1ycXl6YTlpTW1iYVl0Z1VQUDgyOVhoYU9JSmtYdXRwemp6eDRPOWhFb3h5WGcxS0M1MVYiLCJtYWMiOiJjYTVkMTYyZDU0MTVmNWViOTgxZDc2ZTc2YjY4ZmEwNDIxOTFhYjNmYWUxZDMwYzdkYWJlMzI4MzllNGRlNGM5IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/visitors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/visitors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the visitor.'
+        required: true
+        example: nihil
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: nihil
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
