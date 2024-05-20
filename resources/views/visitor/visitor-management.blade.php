@@ -84,6 +84,10 @@
                         <a href="{{ route('visitor.create') }}"
                             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Inserir
                             Novo Visitante</a>
+                        <a href="{{ route('export', ['model' => 'Visitor', 'columns' => ['name', 'lastname', 'document', 'age', 'phone', 'email', 'address', 'number', 'city', 'zipcode', 'state', 'country', 'gender', 'visit_date', 'visit_time', 'prisioner_id'], 'file_name' => 'visitors.xlsx']) }}"
+                            class="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Exportar
+                            Visitantes</a>
+
                     </div>
                 </div>
             </div>

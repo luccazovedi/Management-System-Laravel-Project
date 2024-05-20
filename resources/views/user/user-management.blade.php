@@ -72,7 +72,9 @@
                         <a href="{{ route('user.create') }}"
                             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Inserir
                             Novo Usuário</a>
-                           
+                        <a href="{{ route('export', ['model' => 'User', 'columns' => ['name', 'lastname', 'document', 'phone', 'email', 'access_level'], 'file_name' => 'users.xlsx']) }}"
+                            class="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Exportar
+                            Usuários</a>
                     </div>
                     @endif
                 </div>

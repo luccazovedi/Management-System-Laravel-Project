@@ -69,21 +69,24 @@ Para fazer o deploy desse projeto rode
 
 ## Documentação da API
 
-#### Retorna todos os itens
+#### Acesso à Documentação
 
 ```http
   GET /docs
 ```
-Através da URL, é possível executar a ação de todas as rotas 'GET' que foram liberadas.
+Powered by Scalar.com / Scribe
 
-Os métodos 'PUT', 'DELETE' e 'POST' foram desabilitados mas estão disponíveis para observação, como uma forma de segurança do projeto.
+Através da URL, é possível analisar os Endpoints e executar a ação de todas as rotas.
 
+Os métodos 'PUT', 'DELETE', 'POST' e 'GET' foram disponibilizados para todos os níveis.
 
 ## Possíveis Melhorias e Roadmap
 
-- Melhorar o suporte de navegadores
+- Novos Recursos de Formulários;
 
-- Adicionar mais integrações
+- Recurnos de Navegação para Mobile;
+
+- Integração de Autenticação.
 
 ## Stack utilizada
 

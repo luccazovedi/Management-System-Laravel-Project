@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "http:\/\/127.0.0.1:8000"
         }
     ],
     "info": {
         "name": "Prisioner API Documentation",
-        "_postman_id": "b57a88c3-6a99-40ff-8708-db69e14de396",
+        "_postman_id": "4e35f69b-427d-43dd-828c-ea47eeefc367",
         "description": "Documenta\u00e7\u00e3o da API para o Sistema de Gerenciamento de Prisioneiros\n    Esta documenta\u00e7\u00e3o tem como objetivo fornecer todas as informa\u00e7\u00f5es necess\u00e1rias para trabalhar com nossa API.\n\n    Conforme voc\u00ea rola, ver\u00e1 exemplos de c\u00f3digo para trabalhar com a API em diferentes linguagens de programa\u00e7\u00e3o \n    na \u00e1rea escura \u00e0 direita (ou como parte do conte\u00fado em dispositivos m\u00f3veis).\n\n    Voc\u00ea pode alternar a linguagem usada com as guias no canto superior direito (ou no menu de navega\u00e7\u00e3o no canto \n    superior esquerdo em dispositivos m\u00f3veis).",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IkVJTHdmcGIyRW1BRVMzTDRSL1o4a0E9PSIsInZhbHVlIjoiRjBHSEd3dUI3ZW83TkxZVngvckZ0b3pyZXovbHlNUDI1RWI1ZWR5VFNsUXlEN2doQUE3bjRFa0xMYWlqVUJOcEdNWGVZa3Bjdk9vRTg1cUxtMlo2M1hsakhIL1BrV0xHZnl1SDdDYlk3OGR0aXB0V2RjeDQvMXBzemtlR1NZOHAiLCJtYWMiOiJlYTAxYzMzZmI5YzQ3ZjY3OTljNzgzODkzNDljYWU5NDRiOTk0ODExNjk3ODMwODdjZTRlZjg0NjU1YWRlYWM2IiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlhOUmYvaGN4VmtvZjhHTHYwVkdsR0E9PSIsInZhbHVlIjoiQTBEd0pQQkpSM0FCTXVkdXpVdDd2V1FKVmZ6MFd5bEI3aHdzUjMzVDN6UmZMTUxXRS9uUW5keFgzRGpWSXJHclF0RUZ3VzdnaGxyNFplSkR0cy8xNVRwb3RwdFI3ZjhhZU5oWkN6TjBQa2hvaldNVzJnNmpVMGlKMXhzczlvNHgiLCJtYWMiOiJkZjNhZWIxNDYyNzQ4ODRmZWQ3MTAwNjYyZDAwZGMwMDM4OGNlNDdkOTRhMjJmNThlMjJlMjc4OTI1ZmFiNmMyIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjlxbTVXcFVvNURYVkxqUkFRSC9oMkE9PSIsInZhbHVlIjoiYUQxRERJRkRRU3F2WGhmb2hXdmZGT2NxamtnZzh6OU1UakFVZjU4K1NOTXpXejk5dFp4RndqZWlYV3pHTFdsb2xEZHR0RjVob3h0QU42ejQyNGFJNWwwR2JWSUcyU24zR203YzhIVmNaSVJpYzNKQkc4bWxZdStsRk9DazYwWlUiLCJtYWMiOiI2ZmMwZWFlYTZkNmZkM2UxMzJiYjA2Njg0NzBhYmZmYjQ0ZWI4MGVhZWFhZjUzZDNjYTI2ZjVmOWM4ZWQxN2JkIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6Ilo3OXJkYkR4UmM3SWJzdWgwemllU2c9PSIsInZhbHVlIjoiUnBKL0h6RWl0OXc1Vk1Bb3dVdzVkdGtscXZCVUw4V0d6Tk9zUlFRSTVmMUYwWVN1Vkg4NUgxRG9oc0VrNWdmaXZiTVl4amk3VEZZc1NWYXVhOEpOUldRYmRjQnVOSitiaXB6bjBlbGxmWVVMQnVqU1ZraG1RS2cxVjBYWW52L0IiLCJtYWMiOiIwMjU0MWVmNzQ3MWU4NTlmYjkwYjZiMTVlYzQ5ZmI3ZGVhNDEwNGM4YjhkZWY3NDQ0ODhjZjQwN2Q0ZDNmODNjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -70,6 +70,70 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sed",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/employees",
@@ -114,7 +178,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6ImZpY1h5bk1udk81VXl2Z2RZRFYzbXc9PSIsInZhbHVlIjoiclArR2t3MHVzbXRvaE1vc0J4bTN4VnRoUU5TbnE1ZUxuVElnVmI4Mm9lbWN1SEtyV3ZDYTFGL0lZa0JlNjZXbncxVDVIVGI4dmVNaXlxaWVubGpYNU5QUUsxYUJneVVSTlBoWlFuREtDM0hFcnNKRW1lVFRTbnpWbXlQWDJFcm4iLCJtYWMiOiJiODY0ZGNkZjUyNjY2YWIxYmVhZGVkNGZkMjdiODRiYTY4YjYyNmY4MGNiNzQ0MDViODU1ZGU2ZDRiZDY2ZWJhIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IjB2SUVBMmttb2hVTEpObW00ZjFURGc9PSIsInZhbHVlIjoiTjFKMTZ4blM5NFNXMjh6OHRtUVVaZHZ6L2ptUEQ1bVB2YnRXR2N1L1M1eGpnQnhDUUpTMlREdEExMWNvWm9qWUxONWpEOU4yVC9Kalk3bElwTVp1WDhuSFlBa0s1QnFOYkRXMGhnVi9EalVCTk9TTkVRTFkvVHNReFpCY0UzV2ciLCJtYWMiOiI4MzY1YWE4NjRlZDY5ZjdhODZmMjc3NjFlMjdjMjBkYTM5N2UzOTFlYmZjMjI2NGE2ZmViMjhlYmMxNGVhYjRjIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IlFNU0p1Qk9nbUhNTmFvb01yOC94V3c9PSIsInZhbHVlIjoiUGRKYmZRSm9WNTkyMnJpb201V1h1ZFc5WnVPcS9UeFFoaGFJaDBMU2xua3dSd2lmUEdjcjBqVTN3RzdPOFE2L1FvdytyWWprYWVxZVFPV3V6V3BWWFR4OXNpWTdyVDRFK3BZNXh6TlJOVk5EVGdTSzV1MUxkTSswbGp2YW93OEoiLCJtYWMiOiIyZTQ4NDJiNTA3OWYyZThkNDM5OTFlYWZhMmFlYzNlNjJmMDlhZTRiNDAwNWJkZjQ2NGRkMjhlNDdkZTNiNDFjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6ImYrenYyKy8zdkJ5RXF1bmMra3RiN1E9PSIsInZhbHVlIjoiUGhma3JnYytIZFJFN2d0YUc1REQ0bE5EUXlyM011ejE0Qk9SRTBzYnpScXk4Rlk1ZE8zUW44THY1UW1SdGd3WmpUdTd2djZ6TGZyMDhvRFlFeWpCQjNIak5JQi9nWWxrM2RKcTNJK3YrckE2UXFJWmtXMjdnd2NmV0hBRmpiU2YiLCJtYWMiOiJmY2YyOGY0MGU3ZGZhZTgzMjlhOWNiMmE0ZWMzZTkzMzVhNWM1ZTYyZjMwNzIwMzZiMmRlNDk3OTdlY2RjNDg5IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -122,6 +186,70 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/employees",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/employees\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/employees\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/employees\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "perspiciatis",
+                                    "description": "The ID of the employee."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/prisioners",
@@ -163,17 +291,157 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"message\":\"Success\"}",
+                            "name": ""
+                        },
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjNaU0tvSkJSWkFUQ2FFSUsyakh6a3c9PSIsInZhbHVlIjoiY1JaZ3dMYnhkd2ZESVZ0VzRYQVdwdHhGdFM5K1ZuZGtDM2k3T3NuVFRwNzFHeXVwb1dMZ08xbGhPZmtzTWFhejA3WkwyNlhaMm9kZ3JPYUM2azNzN2VBUXpWRWs3ellMMittMDRBL0xxME54RjFnQTQ4bStGbVNhQnVNY3FGRkwiLCJtYWMiOiI3MTgyMDg4N2E5ZjZlMmE5NzUwOWIyOWQzM2Y1OGZmOTlhNWFhODIyZTgzN2ZhYmVjOTE3YzI5MWY4YTRjYjZjIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6InlYalpUTVJzVm44Vzg0UXhuT0JjUXc9PSIsInZhbHVlIjoiYTZBUzdPZ1IydnYzZ0g0NU01UklIMnBqWHNVWk9LRGhhZjNlQmcveHB0VWw4K2ticTl3WUs1NUVQQ3V3Z0ZTMGEvU1dTaTQxSkRUVDJYZ1JUTHFtYTl4cUNML0JTanRmT05vTFlTK2Nic0VFdDVrRGxUbERhdW5KM2E4SytYTDQiLCJtYWMiOiI0NTQ0ZWViZjVhZDBmYWVlMjdhZGFlOTU0Mzg4NzkzZGQ1YWI4ZDc2NzdlZWMwMDA4MTEzNWExNGJjYzUwNzI3IiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6Iks5OWtBYktSeU5MT21RZnA2aEJTbGc9PSIsInZhbHVlIjoiQUVLaDVJTmQwT09CcDRKTDgxVG5PTGNXNHd4alhHUlZ3OFZoZGN5NGJHWC9NQkR4YnkzUEkzZTU3NzQwTmY5WlJxbE14eHpxbjRwMTdzUFRzU281bFd0d2hLUGFXNXd0RGs1d0tKMkRSQzErNVlwWGkvRnVud0J2dVdVMStpTjciLCJtYWMiOiIzMmJlZDE1MjUwZDZmYzI5ZjkxMjg2YzQyNTQ1MzA0YTdkNDlmN2Y5YTIxZDZjMjBlNGM5NDY4YmY5OGIyOWFmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6ImNJQWdwRk5hNTdGV2V5WEIxQzRaOVE9PSIsInZhbHVlIjoiWlVvMTFIWlE2dnNSWnUxd29HWkI2TUpxTmJ6cktoMTUvMEV6aUZ4SjVSYzQ5YWUrYWJLUGFFekRCMDYvV2pXOXloWnJaWmdBaEF0MEl4eFhBRDlEK2d2M1RFQlJCU3FScVhNRThvb0dIZHdSd0VOQWNWRGpVbEtPOEh2QlIzTVEiLCJtYWMiOiJjODY4NjlmYTg1ZTdlZmJjY2QyZjVmZmFhNGRjN2NhZjdmMGUyMWQ3Njg4NDVhY2MxMjIyMGZjODRhMGM0ZWZlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
                             "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
+                        },
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 403,
+                            "body": "{\"message\":\"Forbidden\"}",
+                            "name": ""
+                        },
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\"message\":\"Not Found\"}",
+                            "name": ""
+                        },
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 405,
+                            "body": "{\"message\":\"Method Not Allowed\"}",
+                            "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/prisioners",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/prisioners",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/prisioners"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/prisioners\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/prisioners\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/prisioners\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "inventore",
+                                    "description": "The ID of the prisioner."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 },
                 {
                     "name": "GET api\/visitors",
@@ -218,7 +486,7 @@
                                 },
                                 {
                                     "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6ImZvOC9tOHowb2EzLzcyRkU0Rk90a1E9PSIsInZhbHVlIjoiYVVrTUJFS3BIcEZCUVcrTlkyeFlSQTJJdHJkdjE1VVp3OGRTU1BWb25Kazk3dUdZL1MxWmNtNTh1Ui9XRGJOZ09UTiszSFFPSnNmWGVreXVaSUFLbHJNZzlabUVuZnR5NHR3SjNyRW13VUdnQ0JuYjJjZEp3ZVhIQkplSkZYVWYiLCJtYWMiOiIzZjRhNWQ0YzZhOTc1ZTlmMTRjMTQxNGMxMDMwNWJmMzkyZGUxYTI2ODcyMTAyMmNlZGE4Y2NlNTdmNmRjNmQyIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6Inc2TDRiZk5NcmRMS1ZkWlAvcExtSmc9PSIsInZhbHVlIjoiVVBwWnRxU1U2STkrU2pwREdIU3JVYTJKSkZZem1sRlhveUZxbDZzQjZwMUZJQlBkbHp1MENMTWZObUJGbW4zZEViNWVBOGd6SkdjUHMvdW8xT2xLdy9YemxXeStXWmZBY05IR0dTWE9vZWVIWEVvTjhKSlNxdVdsb2hGekF2ckkiLCJtYWMiOiI1ZWZjZDU3ODVmMmU4NDUxZWVhZGIxMWM2NWM5ZDc1ZTFjMmM4ZTRjNjFhMGFmNDA1MDIzMjdmZmM0ODAwNTRmIiwidGFnIjoiIn0%3D; expires=Mon, 13 May 2024 04:24:13 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjFkbEg5cFVVTy81c3dOM0dub3hnUnc9PSIsInZhbHVlIjoiNVhGd1JMRkkwSWpIeDhtellSdFhZR2dIMGdSbEhnN1NQRkJtQWlJa0tsUGp5RGxhYWdaM1F6VSsxL1BON1BvZzFMeW5qTFBtb0h1TGJ0Mkw3Ny9zcHE4WWRBRU1PTkxoNXU5dUszaFdUL3JlMXFtL2lUNCtNTzdUTDZSQVMveWwiLCJtYWMiOiIyYmQ3YjNkNmZlOWU0YmMzOTA4YTcyOWI5Yzc1ZmZhZTk4MWM4Mzg3ZTdjZjY0YTQzYTFlZWE0OWZkNmY4YzhmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6InhlVzlBamVmWDM5VnBESUo2YStFY0E9PSIsInZhbHVlIjoibFVrRVFJemxYZkpmSVdQTHZ2R2VxMTRKQWtIcjVob3NwdlNNcG5hRWV2ODhNSE1UMFRhUDhDcHFrMmdmcDRYamRVZzNtK0pHVnBheDFRczBMS04zb1pGVlFyeHg2RnhySEY2VFMxbDdIaUJnZ1FTUy9EQmp2YThzU25RSm5IUFYiLCJtYWMiOiI4MDg2Nzc2NGU3MmNjNDUzYWZkMTFmYTVjMzAzNGY4NDhjMTcyZjY4NGRhYTVmMTBiNThlOTczOTBiMjU3MDQxIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
                                 }
                             ],
                             "code": 401,
@@ -226,6 +494,70 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "POST api\/visitors",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/visitors",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/visitors"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/visitors\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/visitors\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/visitors\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "perferendis",
+                                    "description": "The ID of the visitor."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         }

@@ -34,7 +34,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkZqWlR3aGF4akd3MXgzTlVRY3Fob1E9PSIsInZhbHVlIjoiMG5ueTdyL3FQQjdHdHltdTRHK1dGNkVSQ3JNQXk2OElCRlJMZ3p4RlY2bXB6SEd1Q1NjTE9xbWZKeUR1UkdGdDE3UEhmUm96WVlYTXZPa0E1dGdRRkNzN0grZUdOZ1l6YTk4Q3VOQ0t2MmJDWUtrck9KRHgwcXlwai8yRkNCdlkiLCJtYWMiOiJjMGY5YTliMGJhYmUxZTI0MTJlODQxNzA5NmU2MzQ5MzM2NjJmODg2OTUwYTQ2YzVmNTI0ZWNmZTEyOTk4NGJhIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:07 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IjhZSE1jSE41bmFCT2NxV09UZlhEenc9PSIsInZhbHVlIjoiYU4xL2ZDNUI0NkM2dVNtN1VNMkYrRkV5NWpLczZYUi9BUXpRRlhYUWV5b1FIU3BScURacGVxZ0FGcElUTGJrMzFvQkFlRXd5eXRROXNHSC94SGNmREFUQkQxVjBHRUlieVpFTnN0WVV5dWRJYUxZWDhBQXFoUDJNMXJ4dEc0ZXUiLCJtYWMiOiJjYjYwOWM5YTdhMDQ1MWQyNDI4ZmM5Mjk1NWUyMjQwNmM2MzQzZWJhNmYzMzA4ZWVjNGUxMTdkOTVkYTk1YjBlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:07 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjlxbTVXcFVvNURYVkxqUkFRSC9oMkE9PSIsInZhbHVlIjoiYUQxRERJRkRRU3F2WGhmb2hXdmZGT2NxamtnZzh6OU1UakFVZjU4K1NOTXpXejk5dFp4RndqZWlYV3pHTFdsb2xEZHR0RjVob3h0QU42ejQyNGFJNWwwR2JWSUcyU24zR203YzhIVmNaSVJpYzNKQkc4bWxZdStsRk9DazYwWlUiLCJtYWMiOiI2ZmMwZWFlYTZkNmZkM2UxMzJiYjA2Njg0NzBhYmZmYjQ0ZWI4MGVhZWFhZjUzZDNjYTI2ZjVmOWM4ZWQxN2JkIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6Ilo3OXJkYkR4UmM3SWJzdWgwemllU2c9PSIsInZhbHVlIjoiUnBKL0h6RWl0OXc1Vk1Bb3dVdzVkdGtscXZCVUw4V0d6Tk9zUlFRSTVmMUYwWVN1Vkg4NUgxRG9oc0VrNWdmaXZiTVl4amk3VEZZc1NWYXVhOEpOUldRYmRjQnVOSitiaXB6bjBlbGxmWVVMQnVqU1ZraG1RS2cxVjBYWW52L0IiLCJtYWMiOiIwMjU0MWVmNzQ3MWU4NTlmYjkwYjZiMTVlYzQ5ZmI3ZGVhNDEwNGM4YjhkZWY3NDQ0ODhjZjQwN2Q0ZDNmODNjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -94,13 +94,13 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: ad
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: ad
+      id: sed
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -144,7 +144,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlJtOTdqLzRFTGRhdDFGcDAyYmlJaGc9PSIsInZhbHVlIjoibkdOTm5LWXZLUmNDbE84WTVPaHQ2Y21pWFovTnJUU21GWllFNUNKK0RsSE9id05mL1hhTlNtTmNvd0s3aWdNenN3OHdVVkJaam9iWnFudytoR3lJdFlhNVVaeldiZmV0M3hZY0V1V3VoMUQ5MHpSREZUQmVJRXRYK2huVTg3UEUiLCJtYWMiOiJlNThmNjczYzEyZThjMjdkZTNkZmM2NDYzZjhkOTg2MGIxMDVmNmU1OTUzODcwYmFlM2U0OTJjMzVhMWNlZDRiIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6InV4eDhoVjA0ajVoR1czNVFBbVV2ZlE9PSIsInZhbHVlIjoiK01FV0tDMFRNckt0R1dFTVhLMFErblRjalNzRjRwUWZOclZLUXo0WDhkTk1PYkJhdUwvTThMd2ZGYzlaNkIyQUV3eVBoekhXZ2twVy9BbkhPYWF4QzZmdHNieVFvdWJwazM4OStNemJoMFBsdkxaMFkrVGpXQ3kreEliVE5tK0kiLCJtYWMiOiI2NzdlOTBhYmNmMDY0ZDZjMzQ3ZDA2NWU0MGZlNDFlMzg5OTk1NDA2ZTBkZDlhYmFjODUxY2ZhYjRiYjA5YzI3IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlFNU0p1Qk9nbUhNTmFvb01yOC94V3c9PSIsInZhbHVlIjoiUGRKYmZRSm9WNTkyMnJpb201V1h1ZFc5WnVPcS9UeFFoaGFJaDBMU2xua3dSd2lmUEdjcjBqVTN3RzdPOFE2L1FvdytyWWprYWVxZVFPV3V6V3BWWFR4OXNpWTdyVDRFK3BZNXh6TlJOVk5EVGdTSzV1MUxkTSswbGp2YW93OEoiLCJtYWMiOiIyZTQ4NDJiNTA3OWYyZThkNDM5OTFlYWZhMmFlYzNlNjJmMDlhZTRiNDAwNWJkZjQ2NGRkMjhlNDdkZTNiNDFjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6ImYrenYyKy8zdkJ5RXF1bmMra3RiN1E9PSIsInZhbHVlIjoiUGhma3JnYytIZFJFN2d0YUc1REQ0bE5EUXlyM011ejE0Qk9SRTBzYnpScXk4Rlk1ZE8zUW44THY1UW1SdGd3WmpUdTd2djZ6TGZyMDhvRFlFeWpCQjNIak5JQi9nWWxrM2RKcTNJK3YrckE2UXFJWmtXMjdnd2NmV0hBRmpiU2YiLCJtYWMiOiJmY2YyOGY0MGU3ZGZhZTgzMjlhOWNiMmE0ZWMzZTkzMzVhNWM1ZTYyZjMwNzIwMzZiMmRlNDk3OTdlY2RjNDg5IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -204,13 +204,13 @@ endpoints:
         name: id
         description: 'The ID of the employee.'
         required: true
-        example: numquam
+        example: perspiciatis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: numquam
+      id: perspiciatis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -248,14 +248,50 @@ endpoints:
     fileParameters: []
     responses:
       -
+        status: 200
+        content: '{"message":"Success"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: ''
+        custom: []
+      -
         status: 401
         content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjRyNC9BY1h6bGlCSExwa2ZNWXhrN2c9PSIsInZhbHVlIjoiM1NSMFFvY2QrOTU0U3BHbGpFdGtjT2xWeS9rSnNuck90SURDVFRTcnpzTDIveDhoMUJ2K0RNRE9ZSzNVSU5TVXJldmgydFVGMWo1M1ZUQ2tjWU5iSGtYTGFWa21QK2ZublVSUjRXOXIwTjdyZTUzdC8vNFlTOWV0RVIvNTUzQ0YiLCJtYWMiOiI0ZTFjYzJmZGEzZGQ5OWU0ZmIzM2QwNTE4ZDhjNWFkZDBjN2I0YzU0Mjc3OTNjZDkyNDI1NWYxZTM2ODBlNWI1IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6ImpLQkFRWFZTMHA2OHhXTTFpd2pOK1E9PSIsInZhbHVlIjoiV0NpelVUQVNmN2tDTmZZbGszb09WczRFNlVRV3VLRGhxc1hYTkx6UjB6MFYzeHc1WW9KZVNYY0FWYitRMEJhay83anZySlh4dWMvUy9OWjVsSmNEaEdjNDZoZlNld1A4R3NFOFgyYkVNT0VvclBXQW1kdXVBTmQxMCs1NENvSzQiLCJtYWMiOiI3OTQ4N2MxMmRmNzU0NGFjMWI4MTY5ZDI3NDdiNWYzZWU4YTkwZjE2MDJmNzA0ZGZlNjE0MmM5OTFjNWVmOTM3IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:08 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Iks5OWtBYktSeU5MT21RZnA2aEJTbGc9PSIsInZhbHVlIjoiQUVLaDVJTmQwT09CcDRKTDgxVG5PTGNXNHd4alhHUlZ3OFZoZGN5NGJHWC9NQkR4YnkzUEkzZTU3NzQwTmY5WlJxbE14eHpxbjRwMTdzUFRzU281bFd0d2hLUGFXNXd0RGs1d0tKMkRSQzErNVlwWGkvRnVud0J2dVdVMStpTjciLCJtYWMiOiIzMmJlZDE1MjUwZDZmYzI5ZjkxMjg2YzQyNTQ1MzA0YTdkNDlmN2Y5YTIxZDZjMjBlNGM5NDY4YmY5OGIyOWFmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6ImNJQWdwRk5hNTdGV2V5WEIxQzRaOVE9PSIsInZhbHVlIjoiWlVvMTFIWlE2dnNSWnUxd29HWkI2TUpxTmJ6cktoMTUvMEV6aUZ4SjVSYzQ5YWUrYWJLUGFFekRCMDYvV2pXOXloWnJaWmdBaEF0MEl4eFhBRDlEK2d2M1RFQlJCU3FScVhNRThvb0dIZHdSd0VOQWNWRGpVbEtPOEh2QlIzTVEiLCJtYWMiOiJjODY4NjlmYTg1ZTdlZmJjY2QyZjVmZmFhNGRjN2NhZjdmMGUyMWQ3Njg4NDVhY2MxMjIyMGZjODRhMGM0ZWZlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
+        custom: []
+      -
+        status: 403
+        content: '{"message":"Forbidden"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Not Found"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: ''
+        custom: []
+      -
+        status: 405
+        content: '{"message":"Method Not Allowed"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -314,13 +350,13 @@ endpoints:
         name: id
         description: 'The ID of the prisioner.'
         required: true
-        example: cupiditate
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: cupiditate
+      id: inventore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -364,7 +400,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlpUUmZ3WG9FQitSZURPTkdVTFJya1E9PSIsInZhbHVlIjoiV2ZlRW96WmhvWXVhTjhtYmp3a2pJaTI2a0dIdGVHWlp4U3ZuZzZJR05abmd3ck15SWRpazM2M1dhQjVwOUxZbzN4T1gxcnlyWStqTkxmOXZRL2hIVHZZSGhLSnNxS0NrcmdlU3ZUWnIrTnlnWWdPV0tUUUFYQTJJaWdVaS9QWkgiLCJtYWMiOiJiODkwMzg1YjFiNWU2NzIwYmI0YWZlNmMxYmY5YTUzZjI5MmNhODQyMWY4MTA3M2Y1ZjM2MmJkZjhjNDAwNDEzIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:09 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IlZ0WmxwWFdFQjNveVJmc0NSNG40MkE9PSIsInZhbHVlIjoidG12SDZTanJjZFlRQ1NBTWhZUmVHTVZnTVNnSlpYb0lSdEppRW8xREZKMEhyQnFuLzdsY0lUV21JQWgzUWVNd0J4QWpFVGhNUit6dm1ycXl6YTlpTW1iYVl0Z1VQUDgyOVhoYU9JSmtYdXRwemp6eDRPOWhFb3h5WGcxS0M1MVYiLCJtYWMiOiJjYTVkMTYyZDU0MTVmNWViOTgxZDc2ZTc2YjY4ZmEwNDIxOTFhYjNmYWUxZDMwYzdkYWJlMzI4MzllNGRlNGM5IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 01:05:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjFkbEg5cFVVTy81c3dOM0dub3hnUnc9PSIsInZhbHVlIjoiNVhGd1JMRkkwSWpIeDhtellSdFhZR2dIMGdSbEhnN1NQRkJtQWlJa0tsUGp5RGxhYWdaM1F6VSsxL1BON1BvZzFMeW5qTFBtb0h1TGJ0Mkw3Ny9zcHE4WWRBRU1PTkxoNXU5dUszaFdUL3JlMXFtL2lUNCtNTzdUTDZSQVMveWwiLCJtYWMiOiIyYmQ3YjNkNmZlOWU0YmMzOTA4YTcyOWI5Yzc1ZmZhZTk4MWM4Mzg3ZTdjZjY0YTQzYTFlZWE0OWZkNmY4YzhmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6InhlVzlBamVmWDM5VnBESUo2YStFY0E9PSIsInZhbHVlIjoibFVrRVFJemxYZkpmSVdQTHZ2R2VxMTRKQWtIcjVob3NwdlNNcG5hRWV2ODhNSE1UMFRhUDhDcHFrMmdmcDRYamRVZzNtK0pHVnBheDFRczBMS04zb1pGVlFyeHg2RnhySEY2VFMxbDdIaUJnZ1FTUy9EQmp2YThzU25RSm5IUFYiLCJtYWMiOiI4MDg2Nzc2NGU3MmNjNDUzYWZkMTFmYTVjMzAzNGY4NDhjMTcyZjY4NGRhYTVmMTBiNThlOTczOTBiMjU3MDQxIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -424,13 +460,13 @@ endpoints:
         name: id
         description: 'The ID of the visitor.'
         required: true
-        example: nihil
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: nihil
+      id: perferendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

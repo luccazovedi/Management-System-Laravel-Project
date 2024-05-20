@@ -53,7 +53,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: ad
+        example: sed
         required: true
         schema:
           type: string
@@ -103,7 +103,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the employee.'
-        example: numquam
+        example: perspiciatis
         required: true
         schema:
           type: string
@@ -114,6 +114,18 @@ paths:
       description: ''
       parameters: []
       responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Success
+                properties:
+                  message:
+                    type: string
+                    example: Success
         401:
           description: ''
           content:
@@ -126,6 +138,42 @@ paths:
                   message:
                     type: string
                     example: Unauthenticated.
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Forbidden
+                properties:
+                  message:
+                    type: string
+                    example: Forbidden
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Not Found'
+                properties:
+                  message:
+                    type: string
+                    example: 'Not Found'
+        405:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Method Not Allowed'
+                properties:
+                  message:
+                    type: string
+                    example: 'Method Not Allowed'
       tags:
         - Endpoints
       security: []
@@ -153,7 +201,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the prisioner.'
-        example: cupiditate
+        example: inventore
         required: true
         schema:
           type: string
@@ -203,7 +251,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the visitor.'
-        example: nihil
+        example: perferendis
         required: true
         schema:
           type: string

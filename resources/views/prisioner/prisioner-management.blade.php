@@ -74,6 +74,9 @@
                         <a href="{{ route('prisioner.create') }}"
                             class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Inserir
                             Novo Detento</a>
+                        <a href="{{ route('export', ['model' => 'Prisioner', 'columns' => ['name', 'lastname', 'document', 'age', 'cell', 'gender', 'zipcode', 'address', 'number', 'city', 'state', 'country', 'date_entry', 'date_out', 'crime', 'observation', 'updated_at', 'created_at'], 'file_name' => 'prisoners.xlsx']) }}"
+                            class="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Exportar
+                            Detentos</a>
                     </div>
                     @endif
                 </div>
