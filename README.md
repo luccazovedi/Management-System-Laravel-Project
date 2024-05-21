@@ -4,6 +4,8 @@
 
 O Sistema de Gerenciamento Penitenciário é uma plataforma robusta e segura projetada para administrar todos os aspectos relacionados ao cadastro e controle de indivíduos dentro de uma penitenciária. 
 
+## Recursos e Funções
+
 - Cadastro de Usuários: 
     - Categorizados com diferentes níveis de acesso (administradores, gerentes de visitantes e gerentes de detentos). 
 
@@ -16,56 +18,61 @@ O Sistema de Gerenciamento Penitenciário é uma plataforma robusta e segura pro
         - Eles podem cadastrar novos visitantes, agendar visitas, e gerenciar as permissões de acesso de acordo com as políticas de segurança estabelecidas.
 
 - Cadastro de Funcionários: 
-Possibilidade de registro e gestão dos funcionários, incluindo informações como cargo, horário de trabalho, e dados de contato.  
+    - Possibilidade de registro e gestão dos funcionários, incluindo informações como cargo, horário de trabalho, e dados de contato.  
 
 - Dashboard Interativa: 
     - A dashboard inicial oferece uma visão panorâmica em tempo real de todas as atividades cadastradas no sistema. 
         - Gráficos dinâmicos e relatórios estatísticos fornecem insights valiosos sobre a população carcerária, visitas, e demais aspectos relevantes para a gestão penitenciária.
 
+- Recurso de Busca:
+  - Filtragem de resultados de todas as tabelas em todas instâncias.
 
+- Exportação de Dados:
+  - Todas os resultados de tabelas podem ser salvas em formato de planilhas Excel (xlxs).
 
+## Rodando Localmente
 
-## Rodando localmente
-
-Clone o projeto
+Clone o projeto:
 
 ```bash
   git clone https://github.com/luccazovedi/Management-System-Laravel-Project.git
 ```
 
-Entre no diretório do projeto
+Entre no diretório do projeto:
 
 ```bash
-  cd  'laravel-api'
+  cd  'Management-System-Laravel-Project'
 ```
 
-Instale as dependências
+Instale as dependências:
 
 ```bash
-  npm install, composer install
+  npm install
+```
+```bash
+  composer install
 ```
 
 Inicie o servidor
 
 ```bash
-  npm run dev, php artisan serve
+  npm run dev
 ```
-
+```bash
+  php artisan serve
+```
 ## Deploy
 
 Para fazer o deploy desse projeto rode
 
 ```bash
-  npm run deploy
+  npm run build
 ```
-
-
-## Referência
+## Referências
 
  - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
 
 ## Documentação da API
 
@@ -76,29 +83,19 @@ Para fazer o deploy desse projeto rode
 ```
 Powered by Scalar.com / Scribe
 
-Através da URL, é possível analisar os Endpoints e executar a ação de todas as rotas.
+Através da URL, é possível analisar os Endpoints e executar a ação de todas as rotas por meio da biblioteca _Scribe_.
 
 Os métodos 'PUT', 'DELETE', 'POST' e 'GET' foram disponibilizados para todos os níveis.
 
-## Possíveis Melhorias e Roadmap
-
-- Novos Recursos de Formulários;
-
-- Recurnos de Navegação para Mobile;
-
-- Integração de Autenticação.
-
 ## Stack utilizada
 
-**Front-end:** Blade, Vue, TailwindCSS, Bootstrap
+**Front-end:** Blade, Vue, Tailwind CSS, Bootstrap
 
-**Back-end:** Laravel
+**Back-end:** PHP (laravel Framework)
 
 **Banco de Dados:** MySQL Server
 
-
 ## Suporte e Feedback
-
 
 Para suporte ou algum feedback, mande um email para luccazovedi@gmail.com.
 ## License
