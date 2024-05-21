@@ -8,20 +8,34 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Database\Eloquent\Collection;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $accessLevels = [
-            'admin' => 'Admin',
-            'visitor_management' => 'Gestor de Visitante',
-            'prisioner_management' => 'Gestor de Detentos',
-        ];
         $users = User::all();
+        
+        $search = $request->input('search');
+        $query = User::query();
+        
+        if ($search) {
+            $query->where('name', 'like', "%{$search}%")
+            ->orWhere('lastname', 'like', "%{$search}%")
+            ->orWhere('document', 'like', "%{$search}%")
+            ->orWhere('email', 'like', "%{$search}%")
+            ->get();
+        }
+        $users = $query->get();
+
+        $accessLevels = [
+            'admin' => 'Administrador',
+            'visitor_management' => 'Gerenciamento de Visitantes',
+            'prisioner_management' => 'Gerenciamento de Prisioneiros',
+        ];
         return view('user.user-management', compact('users', 'accessLevels'));
     }
+
     
     public function create()
     {
@@ -153,7 +167,6 @@ class UserController extends Controller
             }
         }
     }
-
 
     public function destroy(User $user)
     {

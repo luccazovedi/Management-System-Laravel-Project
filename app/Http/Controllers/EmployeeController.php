@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $employees = Employee::all();
+        $search = $request->input('search');
+        $query = Employee::query();
+        if ($search) {
+            $query->where('name', 'like', "%{$search}%")
+            ->orWhere('lastname', 'like', "%{$search}%")
+            ->orWhere('document', 'like', "%{$search}%")
+            ->orWhere('email', 'like', "%{$search}%")
+            ->get();
+        }
+        $employees = $query->get();
         return view('employee.employee-management', compact('employees'));
     }
 

@@ -7,9 +7,20 @@ use Illuminate\Http\Request;
 
 class PrisionerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $prisioners = Prisioner::all();
+        
+        $query = Prisioner::query();
+        $search = $request->input('search');
+        if ($search) {
+            $query->where('name', 'like', "%{$search}%")
+                  ->orWhere('age', 'like', "%{$search}%")
+                  ->orWhere('cell', 'like', "%{$search}%")
+                  ->orWhere('crime', 'like', "%{$search}%")
+                  ->get();
+        }
+        $prisioners = $query->get();
         return view('prisioner.prisioner-management', compact('prisioners'));
     }
 

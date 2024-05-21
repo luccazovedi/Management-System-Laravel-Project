@@ -8,9 +8,20 @@ use Illuminate\Http\Request;
 
 class VisitorController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $visitors = Visitor::all();
+
+        $query = Visitor::query();
+        $search = $request->input('search');
+        if ($search) {
+            $query->where('name', 'like', "%{$search}%")
+                  ->orWhere('age', 'like', "%{$search}%")
+                  ->orWhere('document', 'like', "%{$search}%")
+                  ->orWhere('prisioner_id', 'like', "%{$search}%")
+                  ->get();
+        }
+        $visitors = $query->get();
         return view('visitor.visitor-management', compact('visitors'));
     }
 
