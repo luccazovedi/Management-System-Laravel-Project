@@ -30,7 +30,17 @@ O Sistema de Gerenciamento Penitenciário é uma plataforma robusta e segura pro
 - Exportação de Dados:
   - Todas os resultados de tabelas podem ser salvas em formato de planilhas Excel (xlxs).
 
-## Rodando Localmente
+## Stack Utilizada
+
+**Gestão de Ambiente:** WAMP Server
+
+**Front-end:** Laravel Blade, Vue, Tailwind CSS, Bootstrap
+
+**Back-end:** Laravel Framework (PHP)
+
+**Banco de Dados:** MySQL Server
+
+## Utilizando Localmente
 
 Clone o projeto:
 
@@ -52,6 +62,19 @@ Instale as dependências:
 ```bash
   composer install
 ```
+Crie o Banco de Dados:
+
+```bash
+  php artisan migrate
+```
+Insira os Dados _Fakes_ (Opcional):
+
+```bash
+  php artisan db:seed
+```
+- O Projeto é iniciado com 1 usuário base com acesso 'Administrador':
+  - Usuário: admin@email
+  - Senha: senha123
 
 Inicie o servidor
 
@@ -86,14 +109,6 @@ Powered by Scalar.com / Scribe
 Através da URL, é possível analisar os Endpoints e executar a ação de todas as rotas por meio da biblioteca _Scribe_.
 
 Os métodos 'PUT', 'DELETE', 'POST' e 'GET' foram disponibilizados para todos os níveis.
-
-## Stack utilizada
-
-**Front-end:** Blade, Vue, Tailwind CSS, Bootstrap
-
-**Back-end:** PHP (laravel Framework)
-
-**Banco de Dados:** MySQL Server
 
 ## Suporte e Feedback
 
