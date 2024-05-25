@@ -21,14 +21,6 @@ return [
                 'domains' => ['*'],
                 'versions' => ['v1'],
             ],
-            'include' => [
-                'users.index',
-                'employees.index',
-                'prisioners.index',
-                'visitors.index',
-            ],
-            'exclude' => [
-            ],
         ],
     ],
 
@@ -99,20 +91,31 @@ return [
     ],
 
     'groups' => [
-        'default' => 'Endpoints', 'HTTP Requests',
-
+        'default' => 'Endpoints',
         'order' => [
-            'Endpoint' => [
-                'GET /api/users',
-                'GET /api/employees',
-                'GET /api/prisioners',
-                'GET /api/visitors',
+            'Usuário' => [
+                'GET    /api/users',
+                'POST   /api/users',
+                'PUT    /api/users/{id}',
+                'DELETE /api/users/{id}',
             ],
-            'HTTP Requests' => [
-                'GET',
-                'POST',
-                'PUT',
-                'DELETE',
+            'Funcionários' => [
+                'GET /api/employees',
+                'POST /api/employees',
+                'PUT /api/employees/{id}',
+                'DELETE /api/employees/{id}',
+            ],
+            'Prisioneiros' => [
+                'GET /api/prisioners',
+                'POST /api/prisioners',
+                'PUT /api/prisioners/{id}',
+                'DELETE /api/prisioners/{id}',
+            ],
+            'Visitantes' => [
+                'GET /api/visitors',
+                'POST /api/visitors',
+                'PUT /api/visitors/{id}',
+                'DELETE /api/visitors/{id}',    
             ],
         ],
     ],

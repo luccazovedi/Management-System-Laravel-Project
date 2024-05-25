@@ -1,0 +1,878 @@
+name: API
+description: 'Endpoints para a API do sistema de Gerenciamento de Prisões.'
+endpoints:
+  #GET /api/users
+  - httpMethods:
+      - GET
+    uri: api/users
+    metadata:
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Usuários
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: Obter Usuários
+      description: 'Recupera uma lista de usuários.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=...; path=/; samesite=lax; prision_management_system_session=...; path=/; httponly; samesite=lax'
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 200
+        content: '{"message":"Usuários recuperados com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Usuários recuperados com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Nenhum usuário encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nenhum usuário encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao recuperar usuários."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao recuperar usuários.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: UserController
+    method: UserController@index
+    route: /api/users
+    custom: []
+  #POST /api/users
+  - httpMethods:
+      - POST
+    uri: api/users
+    metadata:
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Geral
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: Criar Usuário
+      description: 'Cria um novo usuário.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      - name: name
+        description: 'Nome do usuário.'
+        required: true
+        example: 'John Doe'
+        type: string
+        custom: []
+      - name: email
+        description: 'E-mail do usuário.'
+        required: true
+        example: 'john.doe@example.com'
+        type: string
+        custom: []
+      - name: password
+        description: 'Senha do usuário.'
+        required: true
+        example: 'password123'
+        type: string
+        custom: []
+      - name: access_level
+        description: 'Nível de acesso do usuário.'
+        required: false
+        example: admin
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: John Doe
+      email: john.doe@example.com
+      password: password123
+      access_level: admin
+    fileParameters: []
+    responses:
+      - status: 201
+        content: '{"message":"Usuário criado com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Usuário criado com sucesso.'
+        custom: []
+      - status: 400
+        content: '{"message":"Erro ao criar usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar usuário.'
+        custom: []
+      - status: 409
+        content: '{"message":"E-mail já cadastrado."}'
+        headers:
+          content-type: application/json
+        description: 'E-mail já cadastrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao criar usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar usuário.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: UserController
+    method: UserController@store
+    route: /api/users
+    custom: []
+  #DELETE /api/users/{id}
+  - httpMethods:
+      - DELETE
+    uri: 'api/users/{id}'
+    metadata:
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Usuários
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: Excluir Usuário
+      description: 'Exclui um usuário pelo ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      - name: id
+        description: 'O ID do usuário.'
+        required: true
+        example: '123'
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 123
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 200
+        content: '{"message":"Usuário excluído com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Usuário excluído com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Usuário não encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Usuário não encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir usuário.'
+        custom: []
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          content-type: application/json
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 403
+        content: '{"message":"Sem permissão."}'
+        headers:
+          content-type: application/json
+        description: 'Sem permissão para acessar este endpoint.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir usuário.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: UserController
+    method: UserController@destroy
+    route: /api/users/{id}
+    custom: []
+  #GET /api/employees
+  - httpMethods:
+      - GET
+    uri: api/employees
+    metadata:
+      groupName: Funcionários
+      groupDescription: 'Endpoints relacionados às operações de funcionários.'
+      subgroup: Funcionários
+      subgroupDescription: 'Operações gerais relacionadas a funcionários.'
+      title: Obter Funcionários
+      description: 'Recupera uma lista de funcionários.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=...; path=/; samesite=lax; prision_management_system_session=...; path=/; httponly; samesite=lax'
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 200
+        content: '{"message":"Funcionários recuperados com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Funcionários recuperados com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Nenhum funcionário encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nenhum funcionário encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao recuperar funcionários."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao recuperar funcionários.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: EmployeeController
+    method: EmployeeController@index
+    route: /api/employees
+    custom: []
+  #POST /api/employees
+  - httpMethods:
+      - POST
+    uri: api/employees
+    metadata:
+      groupName: Funcionários
+      groupDescription: 'Endpoints relacionados às operações de funcionários.'
+      subgroup: Funcionários
+      subgroupDescription: 'Operações gerais relacionadas a funcionários.'
+      title: Criar Funcionário
+      description: 'Cria um novo funcionário.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      - name: name
+        description: 'Nome do funcionário.'
+        required: true
+        example: 'Jane Doe'
+        type: string
+        custom: []
+      - name: position
+        description: 'Cargo do funcionário.'
+        required: true
+        example: 'Gerente'
+        type: string
+        custom: []
+      - name: salary
+        description: 'Salário do funcionário.'
+        required: true
+        example: 50000
+        type: number
+        custom: []
+    cleanBodyParameters:
+      name: Jane Doe
+      position: Gerente
+      salary: 50000
+    fileParameters: []
+    responses:
+      - status: 201
+        content: '{"message":"Funcionário criado com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Funcionário criado com sucesso.'
+        custom: []
+      - status: 400
+        content: '{"message":"Erro ao criar funcionário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar funcionário.'
+        custom: []
+      - status: 409
+        content: '{"message":"Nome já cadastrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nome já cadastrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao criar funcionário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar funcionário.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: EmployeeController
+    method: EmployeeController@store
+    route: /api/employees
+    custom: []
+  #DELETE /api/employees/{id}
+  - httpMethods:
+      - DELETE
+    uri: 'api/employees/{id}'
+    metadata:
+      groupName: Funcionários
+      groupDescription: 'Endpoints relacionados às operações de funcionários.'
+      subgroup: Funcionários
+      subgroupDescription: 'Operações gerais relacionadas a funcionários.'
+      title: Excluir Funcionário
+      description: 'Exclui um funcionário pelo ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      - name: id
+        description: 'O ID do funcionário.'
+        required: true
+        example: 456
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 456
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 200
+        content: '{"message":"Funcionário excluído com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Funcionário excluído com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Funcionário não encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Funcionário não encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir funcionário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir funcionário.'
+        custom: []
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          content-type: application/json
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 403
+        content: '{"message":"Sem permissão."}'
+        headers:
+          content-type: application/json
+        description: 'Sem permissão para acessar este endpoint.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir funcionário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir funcionário.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: EmployeeController
+    method: EmployeeController@destroy
+    route: /api/employees/{id}
+    custom: []
+  #GET /api/visitors
+  - httpMethods:
+      - GET
+    uri: api/visitors
+    metadata:
+      groupName: Visitantes
+      groupDescription: 'Endpoints relacionados às operações de visitantes.'
+      subgroup: Visitantes
+      subgroupDescription: 'Operações gerais relacionadas a visitantes.'
+      title: Obter Visitantes
+      description: 'Recupera uma lista de visitantes.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=...; path=/; samesite=lax; prision_management_system_session=...; path=/; httponly; samesite=lax'
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 200
+        content: '{"message":"Visitantes recuperados com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Visitantes recuperados com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Nenhum visitante encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nenhum visitante encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao recuperar visitantes."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao recuperar visitantes.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: VisitorController
+    method: VisitorController@index
+    route: /api/visitors
+    custom: []
+  #POST /api/visitors
+  - httpMethods:
+      - POST
+    uri: api/visitors
+    metadata:
+      groupName: Visitantes
+      groupDescription: 'Endpoints relacionados às operações de visitantes.'
+      subgroup: Visitantes
+      subgroupDescription: 'Operações gerais relacionadas a visitantes.'
+      title: Criar Visitante
+      description: 'Cria um novo visitante.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      - name: name
+        description: 'Nome do visitante.'
+        required: true
+        example: 'Alice Johnson'
+        type: string
+        custom: []
+      - name: document
+        description: 'Documento do visitante.'
+        required: true
+        example: 123456789
+        type: integer
+        custom: []
+      - name: visit_date
+        description: 'Data da visita.'
+        required: true
+        example: '2024-05-25'
+        type: string
+        format: date
+        custom: []
+      - name: prisioner_id
+        description: 'ID do prisioneiro visitado.'
+        required: true
+        example: 101
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: Alice Johnson
+      relation: Irmã
+      visit_date: 2024-05-25
+      prisioner_id: 101
+      document: 123456789
+    fileParameters: []
+    responses:
+      - status: 201
+        content: '{"message":"Visitante criado com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Visitante criado com sucesso.'
+        custom: []
+      - status: 400
+        content: '{"message":"Erro ao criar visitante."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar visitante.'
+        custom: []
+      - status: 409
+        content: '{"message":"Nome já cadastrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nome já cadastrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao criar visitante."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar visitante.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: VisitorController
+    method: createVisitor
+    route: /api/visitors
+    custom: []
+  #DELETE /api/visitors/{id}
+  - httpMethods:
+      - DELETE
+    uri: 'api/visitors/{id}'
+    metadata:
+      groupName: Visitantes
+      groupDescription: 'Endpoints relacionados às operações de visitantes.'
+      subgroup: Visitantes
+      subgroupDescription: 'Operações gerais relacionadas a visitantes.'
+      title: Excluir Visitante
+      description: 'Exclui um visitante pelo ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      - name: id
+        description: 'O ID do visitante.'
+        required: true
+        example: 101
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 101
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      - status: 200
+        content: '{"message":"Visitante excluído com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Visitante excluído com sucesso.'
+        custom: []
+      - status: 404
+        content: '{"message":"Visitante não encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Visitante não encontrado.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir visitante."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir visitante.'
+        custom: []
+      - status: 401
+        content: '{"message":"Não autenticado."}'
+        headers:
+          content-type: application/json
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      - status: 403
+        content: '{"message":"Sem permissão."}'
+        headers:
+          content-type: application/json
+        description: 'Sem permissão para acessar este endpoint.'
+        custom: []
+      - status: 500
+        content: '{"message":"Erro ao excluir visitante."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir visitante.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: VisitorController
+    method: deleteVisitor
+    route: /api/visitors/{id}
+    custom: []
+  #GET /api/prisioners
+  -
+    httpMethods:
+      - GET
+    uri: api/prisioners
+    metadata:
+      groupName: Prisioneiros
+      groupDescription: 'Endpoints relacionados às operações de prisioneiros'
+      subgroup: 'Prisioneiros'
+      subgroupDescription: 'Operações gerais relacionadas a prisioneiros'
+      title: 'Listar Prisioneiros'
+      description: 'Retorna a lista de prisioneiros.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      -
+        name: name
+        description: 'Nome do prisioneiro.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      -
+        name: crime
+        description: 'Crime cometido pelo prisioneiro.'
+        required: true
+        example: 'Roubo'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      - name: date_entry
+        description: 'Data de entrada do prisioneiro.'
+        required: true
+        example: '2024-05-25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      - name: date_out
+        description: 'Data de saída do prisioneiro.'
+        required: true
+        example: '2024-05-25'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      - name: observation
+        description: 'Observações sobre o prisioneiro.'
+        required: true
+        example: 'Prisioneiro perigoso.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: 'John Doe'
+      crime: 'Roubo'
+      date_entry: '2024-05-25'
+      date_out: '2024-05-25'
+      observation: 'Prisioneiro perigoso.'
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImVveWlzbkNYQkg3ck1GWDYrY2NzbGc9PSIsInZhbHVlIjoiWCtnM2dORk5jd01SRUJXQlJoczRDMTdOWjl2MDY5RmNlekFsbmNiTnNRTDk4bUo5WGhadkNJbnlGOUFEclplRXNBbTVtZGlTejVQNkVOOURwTGFjSk0xTjMzYVVXMHhpWU1uRTBqN1IwbElzNXdtWjNRakcwM3Z2RTZlUG53NmYiLCJtYWMiOiJlM2M2ZGEwOGE4OWFiZDA1NjY1ODU5YzBmYjkwYWJlYTc5ZTAxN2EwNDdhNjc0OWZlZTUyNTM3MTQ0ZjVlNjE1IiwidGFnIjoiIn0%3D; expires=Fri, 24 May 2024 22:59:23 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IlNML0kvWTdwbWRhQk95Vk8yU2l3a0E9PSIsInZhbHVlIjoiemU4OFRtTjNhU0hYNEc4WS8zcXVpMlVpRHJmTE5BVUIxVGZLTC9jeGxSMzEvTWNwbENxYXJzSzlvdFYvbUJMOG9SU21DSTJMNDMzdE5YWGJsWkxhMWhVbUxVTDZ1TnV2VmJGTEFkREZzTXhFSGYxSGV6MFcrVXpxZTlHTWJSVFUiLCJtYWMiOiJkZjIzYmE5MzdlZjg3YmM2ZDEwYjFmNjg5YTQwZWE1N2RhYzM1NmE3N2QyNzlkYjhkMDA2Y2Q1MGVmZjBkY2U5IiwidGFnIjoiIn0%3D; expires=Fri, 24 May 2024 22:59:23 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+      -
+        status: 200
+        content: '{"message":"Prisioneiros recuperados com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Prisioneiros recuperados com sucesso.'
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Nenhum prisioneiro encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nenhum prisioneiro encontrado.'
+        custom: []
+      -
+        status: 500
+        content: '{"message":"Erro ao recuperar prisioneiros."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao recuperar prisioneiros.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: PrisionerController
+    method: PrisionerController@index
+    route: /api/prisioners
+    custom: []
+  #POST /api/prisioners
+  -
+    httpMethods:
+      - POST
+    uri: api/prisioners
+    metadata:
+      groupName: Prisioneiros
+      groupDescription: 'Endpoints relacionados às operações de prisioneiros'
+      subgroup: 'Prisioneiros'
+      subgroupDescription: 'Operações gerais relacionadas a prisioneiros'
+      title: 'Criar Prisioneiro'
+      description: 'Cria um novo prisioneiro'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      -
+        name: name
+        description: 'Nome do prisioneiro.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      - 
+        name: crime
+        description: 'Crime cometido pelo prisioneiro.'
+        required: true
+        example: 'Roubo'
+        type: string
+        enumValues: []
+      - 
+        name: date_entry
+        description: 'Data de entrada do prisioneiro.'
+        required: true
+        example: '2024-05-25'
+        type: string
+        enumValues: []
+      - 
+        name: date_out
+        description: 'Data de saída do prisioneiro.'
+        required: true
+        example: '2024-05-25'
+        type: string
+        enumValues: []
+      - 
+        name: observation
+        description: 'Observações sobre o prisioneiro.'
+        required: true
+        example: 'Prisioneiro perigoso.'
+        type: string
+        enumValues: []
+    cleanBodyParameters:
+      name: 'John Doe'
+      crime: 'Roubo'
+      date_entry: '2024-05-25'
+      date_out: '2024-05-25'
+      observation: 'Prisioneiro perigoso.'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: PrisionerController
+    method: PrisionerController@store
+    route: /api/prisioners
+    custom: []
+  #GET /api/prisioners/{id}
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/prisioners/{id}'
+    metadata:
+      groupName: Prisioneiros
+      groupDescription: 'Endpoints relacionados às operações de prisioneiros.'
+      subgroup: 'Prisioneiros'
+      subgroupDescription: 'Operações gerais relacionadas a prisioneiros.'
+      title: 'Excluir Prisioneiro'
+      description: 'Exclui um prisioneiro pelo ID.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'O ID do prisioneiro.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Prisioneiro excluído com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Prisioneiro excluído com sucesso.'
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Prisioneiro não encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Prisioneiro não encontrado.'
+        custom: []
+      -
+        status: 500
+        content: '{"message":"Erro ao excluir prisioneiro."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir prisioneiro.'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: PrisionerController
+    method: PrisionerController@destroy
+    route: /api/prisioners/{id}
+    custom: []

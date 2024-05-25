@@ -14,23 +14,6 @@ return [
     Você pode alternar a linguagem usada com as guias no canto superior direito (ou no menu de navegação no canto 
     superior esquerdo em dispositivos móveis).',
 
-    'routes' => [
-        [
-            'match' => [
-                'prefixes' => ['api/*'],
-                'domains' => ['*'],
-                'versions' => ['v1'],
-            ],
-            'include' => [
-                'users.index',
-                'employees.index',
-                'prisioners.index',
-                'visitors.index',
-            ],
-            'exclude' => [
-            ],
-        ],
-    ],
 
     'type' => 'external_static',
 
@@ -108,16 +91,11 @@ return [
                 'GET /api/prisioners',
                 'GET /api/visitors',
             ],
-            'HTTP Requests' => [
-                'GET',
-                'POST',
-                'PUT',
-                'DELETE',
-            ],
+           
         ],
     ],
 
-    'logo' => '../public/jailicon.svg',
+    'logo' => '../public/favicon.png',
 
     'last_updated' => 'última Atualização: {date:F j, Y}',
 
@@ -183,5 +161,4 @@ return [
 
     'routeMatcher' => \Knuckles\Scribe\Matching\RouteMatcher::class,
 
-    'base_url' => null,
 ];

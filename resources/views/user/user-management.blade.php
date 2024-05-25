@@ -34,16 +34,16 @@
                                     <tr>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                                            Nome</th>
+                                            Usuário</th>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                                            Sobrenome</th>
+                                            Nível de Acesso</th>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
                                             Documento</th>
                                         <th
                                             class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-600 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                                            Nível de Acesso</th>
+                                            E-mail</th>
                                         @if(auth()->user()->access_level == 'admin' || auth()->user()->access_level ==
                                         'prisioner_management')
                                         <th

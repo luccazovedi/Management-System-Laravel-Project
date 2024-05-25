@@ -10,554 +10,1043 @@
     ],
     "info": {
         "name": "Prisioner API Documentation",
-        "_postman_id": "4e35f69b-427d-43dd-828c-ea47eeefc367",
+        "_postman_id": "ee8db6b8-46a9-4fc3-8c2b-9e2c1e277c41",
         "description": "Documenta\u00e7\u00e3o da API para o Sistema de Gerenciamento de Prisioneiros\n    Esta documenta\u00e7\u00e3o tem como objetivo fornecer todas as informa\u00e7\u00f5es necess\u00e1rias para trabalhar com nossa API.\n\n    Conforme voc\u00ea rola, ver\u00e1 exemplos de c\u00f3digo para trabalhar com a API em diferentes linguagens de programa\u00e7\u00e3o \n    na \u00e1rea escura \u00e0 direita (ou como parte do conte\u00fado em dispositivos m\u00f3veis).\n\n    Voc\u00ea pode alternar a linguagem usada com as guias no canto superior direito (ou no menu de navega\u00e7\u00e3o no canto \n    superior esquerdo em dispositivos m\u00f3veis).",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
-            "description": "",
+            "name": "Funcion\u00e1rios",
+            "description": "Endpoints relacionados \u00e0s opera\u00e7\u00f5es de funcion\u00e1rios.",
             "item": [
                 {
-                    "name": "GET api\/users",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
+                    "name": "Funcion\u00e1rios",
+                    "description": "Opera\u00e7\u00f5es gerais relacionadas a funcion\u00e1rios.",
+                    "item": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
+                            "name": "Obter Funcion\u00e1rios",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/employees",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/employees"
                                 },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjlxbTVXcFVvNURYVkxqUkFRSC9oMkE9PSIsInZhbHVlIjoiYUQxRERJRkRRU3F2WGhmb2hXdmZGT2NxamtnZzh6OU1UakFVZjU4K1NOTXpXejk5dFp4RndqZWlYV3pHTFdsb2xEZHR0RjVob3h0QU42ejQyNGFJNWwwR2JWSUcyU24zR203YzhIVmNaSVJpYzNKQkc4bWxZdStsRk9DazYwWlUiLCJtYWMiOiI2ZmMwZWFlYTZkNmZkM2UxMzJiYjA2Njg0NzBhYmZmYjQ0ZWI4MGVhZWFhZjUzZDNjYTI2ZjVmOWM4ZWQxN2JkIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6Ilo3OXJkYkR4UmM3SWJzdWgwemllU2c9PSIsInZhbHVlIjoiUnBKL0h6RWl0OXc1Vk1Bb3dVdzVkdGtscXZCVUw4V0d6Tk9zUlFRSTVmMUYwWVN1Vkg4NUgxRG9oc0VrNWdmaXZiTVl4amk3VEZZc1NWYXVhOEpOUldRYmRjQnVOSitiaXB6bjBlbGxmWVVMQnVqU1ZraG1RS2cxVjBYWW52L0IiLCJtYWMiOiIwMjU0MWVmNzQ3MWU4NTlmYjkwYjZiMTVlYzQ5ZmI3ZGVhNDEwNGM4YjhkZWY3NDQ0ODhjZjQwN2Q0ZDNmODNjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Recupera uma lista de funcion\u00e1rios.",
+                                "auth": {
+                                    "type": "noauth"
                                 }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        },
+                                        {
+                                            "key": "set-cookie",
+                                            "value": "XSRF-TOKEN=...; path=\/; samesite=lax; prision_management_system_session=...; path=\/; httponly; samesite=lax"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Funcion\u00e1rios recuperados com sucesso.\"}",
+                                    "name": "Funcion\u00e1rios recuperados com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Nenhum funcion\u00e1rio encontrado.\"}",
+                                    "name": "Nenhum funcion\u00e1rio encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao recuperar funcion\u00e1rios.\"}",
+                                    "name": "Erro ao recuperar funcion\u00e1rios."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Criar Funcion\u00e1rio",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/employees",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/employees"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "[\"Jane Doe\",\"Gerente\",50000]"
+                                },
+                                "description": "Cria um novo funcion\u00e1rio.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 201,
+                                    "body": "{\"message\":\"Funcion\u00e1rio criado com sucesso.\"}",
+                                    "name": "Funcion\u00e1rio criado com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 400,
+                                    "body": "{\"message\":\"Erro ao criar funcion\u00e1rio.\"}",
+                                    "name": "Erro ao criar funcion\u00e1rio."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 409,
+                                    "body": "{\"message\":\"Nome j\u00e1 cadastrado.\"}",
+                                    "name": "Nome j\u00e1 cadastrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao criar funcion\u00e1rio.\"}",
+                                    "name": "Erro ao criar funcion\u00e1rio."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Excluir Funcion\u00e1rio",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/employees\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/employees\/:id",
+                                    "variable": [
+                                        {
+                                            "id": 0,
+                                            "key": 0,
+                                            "value": "456",
+                                            "description": "O ID do funcion\u00e1rio."
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Exclui um funcion\u00e1rio pelo ID.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Funcion\u00e1rio exclu\u00eddo com sucesso.\"}",
+                                    "name": "Funcion\u00e1rio exclu\u00eddo com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Funcion\u00e1rio n\u00e3o encontrado.\"}",
+                                    "name": "Funcion\u00e1rio n\u00e3o encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir funcion\u00e1rio.\"}",
+                                    "name": "Erro ao excluir funcion\u00e1rio."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 403,
+                                    "body": "{\"message\":\"Sem permiss\u00e3o.\"}",
+                                    "name": "Sem permiss\u00e3o para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir funcion\u00e1rio.\"}",
+                                    "name": "Erro ao excluir funcion\u00e1rio."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Prisioneiros",
+            "description": "Endpoints relacionados \u00e0s opera\u00e7\u00f5es de prisioneiros",
+            "item": [
+                {
+                    "name": "Prisioneiros",
+                    "description": "Opera\u00e7\u00f5es gerais relacionadas a prisioneiros",
+                    "item": [
+                        {
+                            "name": "Listar Prisioneiros",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/prisioners",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/prisioners"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "[\"John Doe\",\"Roubo\",\"2024-05-25\",\"2024-05-25\",\"Prisioneiro perigoso.\"]"
+                                },
+                                "description": "Retorna a lista de prisioneiros.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        },
+                                        {
+                                            "key": "set-cookie",
+                                            "value": "XSRF-TOKEN=eyJpdiI6ImVveWlzbkNYQkg3ck1GWDYrY2NzbGc9PSIsInZhbHVlIjoiWCtnM2dORk5jd01SRUJXQlJoczRDMTdOWjl2MDY5RmNlekFsbmNiTnNRTDk4bUo5WGhadkNJbnlGOUFEclplRXNBbTVtZGlTejVQNkVOOURwTGFjSk0xTjMzYVVXMHhpWU1uRTBqN1IwbElzNXdtWjNRakcwM3Z2RTZlUG53NmYiLCJtYWMiOiJlM2M2ZGEwOGE4OWFiZDA1NjY1ODU5YzBmYjkwYWJlYTc5ZTAxN2EwNDdhNjc0OWZlZTUyNTM3MTQ0ZjVlNjE1IiwidGFnIjoiIn0%3D; expires=Fri, 24 May 2024 22:59:23 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6IlNML0kvWTdwbWRhQk95Vk8yU2l3a0E9PSIsInZhbHVlIjoiemU4OFRtTjNhU0hYNEc4WS8zcXVpMlVpRHJmTE5BVUIxVGZLTC9jeGxSMzEvTWNwbENxYXJzSzlvdFYvbUJMOG9SU21DSTJMNDMzdE5YWGJsWkxhMWhVbUxVTDZ1TnV2VmJGTEFkREZzTXhFSGYxSGV6MFcrVXpxZTlHTWJSVFUiLCJtYWMiOiJkZjIzYmE5MzdlZjg3YmM2ZDEwYjFmNjg5YTQwZWE1N2RhYzM1NmE3N2QyNzlkYjhkMDA2Y2Q1MGVmZjBkY2U5IiwidGFnIjoiIn0%3D; expires=Fri, 24 May 2024 22:59:23 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"Unauthenticated.\"}",
+                                    "name": ""
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Prisioneiros recuperados com sucesso.\"}",
+                                    "name": "Prisioneiros recuperados com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Nenhum prisioneiro encontrado.\"}",
+                                    "name": "Nenhum prisioneiro encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao recuperar prisioneiros.\"}",
+                                    "name": "Erro ao recuperar prisioneiros."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Criar Prisioneiro",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/prisioners",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/prisioners"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "[\"John Doe\",\"Roubo\",\"2024-05-25\",\"2024-05-25\",\"Prisioneiro perigoso.\"]"
+                                },
+                                "description": "Cria um novo prisioneiro",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Excluir Prisioneiro",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/prisioners\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/prisioners\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "3",
+                                            "description": "O ID do prisioneiro."
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Exclui um prisioneiro pelo ID.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Prisioneiro exclu\u00eddo com sucesso.\"}",
+                                    "name": "Prisioneiro exclu\u00eddo com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Prisioneiro n\u00e3o encontrado.\"}",
+                                    "name": "Prisioneiro n\u00e3o encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir prisioneiro.\"}",
+                                    "name": "Erro ao excluir prisioneiro."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Visitantes",
+            "description": "Endpoints relacionados \u00e0s opera\u00e7\u00f5es de visitantes.",
+            "item": [
+                {
+                    "name": "Visitantes",
+                    "description": "Opera\u00e7\u00f5es gerais relacionadas a visitantes.",
+                    "item": [
+                        {
+                            "name": "Obter Visitantes",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/visitors",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/visitors"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Recupera uma lista de visitantes.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        },
+                                        {
+                                            "key": "set-cookie",
+                                            "value": "XSRF-TOKEN=...; path=\/; samesite=lax; prision_management_system_session=...; path=\/; httponly; samesite=lax"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Visitantes recuperados com sucesso.\"}",
+                                    "name": "Visitantes recuperados com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Nenhum visitante encontrado.\"}",
+                                    "name": "Nenhum visitante encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao recuperar visitantes.\"}",
+                                    "name": "Erro ao recuperar visitantes."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Criar Visitante",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/visitors",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/visitors"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "[\"Alice Johnson\",123456789,\"2024-05-25\",101]"
+                                },
+                                "description": "Cria um novo visitante.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 201,
+                                    "body": "{\"message\":\"Visitante criado com sucesso.\"}",
+                                    "name": "Visitante criado com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 400,
+                                    "body": "{\"message\":\"Erro ao criar visitante.\"}",
+                                    "name": "Erro ao criar visitante."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 409,
+                                    "body": "{\"message\":\"Nome j\u00e1 cadastrado.\"}",
+                                    "name": "Nome j\u00e1 cadastrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao criar visitante.\"}",
+                                    "name": "Erro ao criar visitante."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Excluir Visitante",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/visitors\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/visitors\/:id",
+                                    "variable": [
+                                        {
+                                            "id": 0,
+                                            "key": 0,
+                                            "value": "101",
+                                            "description": "O ID do visitante."
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Exclui um visitante pelo ID.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Visitante exclu\u00eddo com sucesso.\"}",
+                                    "name": "Visitante exclu\u00eddo com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Visitante n\u00e3o encontrado.\"}",
+                                    "name": "Visitante n\u00e3o encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir visitante.\"}",
+                                    "name": "Erro ao excluir visitante."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 403,
+                                    "body": "{\"message\":\"Sem permiss\u00e3o.\"}",
+                                    "name": "Sem permiss\u00e3o para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir visitante.\"}",
+                                    "name": "Erro ao excluir visitante."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Usu\u00e1rios",
+            "description": "Endpoints relacionados \u00e0s opera\u00e7\u00f5es de usu\u00e1rios.",
+            "item": [
+                {
+                    "name": "Usu\u00e1rios",
+                    "description": "Opera\u00e7\u00f5es gerais relacionadas a usu\u00e1rios.",
+                    "item": [
+                        {
+                            "name": "Obter Usu\u00e1rios",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/users"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Recupera uma lista de usu\u00e1rios.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        },
+                                        {
+                                            "key": "set-cookie",
+                                            "value": "XSRF-TOKEN=...; path=\/; samesite=lax; prision_management_system_session=...; path=\/; httponly; samesite=lax"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Usu\u00e1rios recuperados com sucesso.\"}",
+                                    "name": "Usu\u00e1rios recuperados com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Nenhum usu\u00e1rio encontrado.\"}",
+                                    "name": "Nenhum usu\u00e1rio encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao recuperar usu\u00e1rios.\"}",
+                                    "name": "Erro ao recuperar usu\u00e1rios."
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Excluir Usu\u00e1rio",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/users\/:id",
+                                    "variable": [
+                                        {
+                                            "id": 0,
+                                            "key": 0,
+                                            "value": "123",
+                                            "description": "O ID do usu\u00e1rio."
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Exclui um usu\u00e1rio pelo ID.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"message\":\"Usu\u00e1rio exclu\u00eddo com sucesso.\"}",
+                                    "name": "Usu\u00e1rio exclu\u00eddo com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 404,
+                                    "body": "{\"message\":\"Usu\u00e1rio n\u00e3o encontrado.\"}",
+                                    "name": "Usu\u00e1rio n\u00e3o encontrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir usu\u00e1rio.\"}",
+                                    "name": "Erro ao excluir usu\u00e1rio."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 401,
+                                    "body": "{\"message\":\"N\u00e3o autenticado.\"}",
+                                    "name": "Autentica\u00e7\u00e3o necess\u00e1ria para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 403,
+                                    "body": "{\"message\":\"Sem permiss\u00e3o.\"}",
+                                    "name": "Sem permiss\u00e3o para acessar este endpoint."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao excluir usu\u00e1rio.\"}",
+                                    "name": "Erro ao excluir usu\u00e1rio."
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/users",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
+                    "name": "Geral",
+                    "description": "Opera\u00e7\u00f5es gerais relacionadas a usu\u00e1rios.",
+                    "item": [
+                        {
+                            "name": "Criar Usu\u00e1rio",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/users",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/users"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "[\"John Doe\",\"john.doe@example.com\",\"password123\",\"admin\"]"
+                                },
+                                "description": "Cria um novo usu\u00e1rio.",
+                                "auth": {
+                                    "type": "noauth"
+                                }
                             },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/users\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/users\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/users\/:id",
-                            "variable": [
+                            "response": [
                                 {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "sed",
-                                    "description": "The ID of the user."
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 201,
+                                    "body": "{\"message\":\"Usu\u00e1rio criado com sucesso.\"}",
+                                    "name": "Usu\u00e1rio criado com sucesso."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 400,
+                                    "body": "{\"message\":\"Erro ao criar usu\u00e1rio.\"}",
+                                    "name": "Erro ao criar usu\u00e1rio."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 409,
+                                    "body": "{\"message\":\"E-mail j\u00e1 cadastrado.\"}",
+                                    "name": "E-mail j\u00e1 cadastrado."
+                                },
+                                {
+                                    "header": [
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        }
+                                    ],
+                                    "code": 500,
+                                    "body": "{\"message\":\"Erro ao criar usu\u00e1rio.\"}",
+                                    "name": "Erro ao criar usu\u00e1rio."
                                 }
                             ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/employees",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/employees",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/employees"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IlFNU0p1Qk9nbUhNTmFvb01yOC94V3c9PSIsInZhbHVlIjoiUGRKYmZRSm9WNTkyMnJpb201V1h1ZFc5WnVPcS9UeFFoaGFJaDBMU2xua3dSd2lmUEdjcjBqVTN3RzdPOFE2L1FvdytyWWprYWVxZVFPV3V6V3BWWFR4OXNpWTdyVDRFK3BZNXh6TlJOVk5EVGdTSzV1MUxkTSswbGp2YW93OEoiLCJtYWMiOiIyZTQ4NDJiNTA3OWYyZThkNDM5OTFlYWZhMmFlYzNlNjJmMDlhZTRiNDAwNWJkZjQ2NGRkMjhlNDdkZTNiNDFjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6ImYrenYyKy8zdkJ5RXF1bmMra3RiN1E9PSIsInZhbHVlIjoiUGhma3JnYytIZFJFN2d0YUc1REQ0bE5EUXlyM011ejE0Qk9SRTBzYnpScXk4Rlk1ZE8zUW44THY1UW1SdGd3WmpUdTd2djZ6TGZyMDhvRFlFeWpCQjNIak5JQi9nWWxrM2RKcTNJK3YrckE2UXFJWmtXMjdnd2NmV0hBRmpiU2YiLCJtYWMiOiJmY2YyOGY0MGU3ZGZhZTgzMjlhOWNiMmE0ZWMzZTkzMzVhNWM1ZTYyZjMwNzIwMzZiMmRlNDk3OTdlY2RjNDg5IiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "POST api\/employees",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/employees",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/employees"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/employees\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/employees\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/employees\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "perspiciatis",
-                                    "description": "The ID of the employee."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/prisioners",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/prisioners",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/prisioners"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "{\"message\":\"Success\"}",
-                            "name": ""
-                        },
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Iks5OWtBYktSeU5MT21RZnA2aEJTbGc9PSIsInZhbHVlIjoiQUVLaDVJTmQwT09CcDRKTDgxVG5PTGNXNHd4alhHUlZ3OFZoZGN5NGJHWC9NQkR4YnkzUEkzZTU3NzQwTmY5WlJxbE14eHpxbjRwMTdzUFRzU281bFd0d2hLUGFXNXd0RGs1d0tKMkRSQzErNVlwWGkvRnVud0J2dVdVMStpTjciLCJtYWMiOiIzMmJlZDE1MjUwZDZmYzI5ZjkxMjg2YzQyNTQ1MzA0YTdkNDlmN2Y5YTIxZDZjMjBlNGM5NDY4YmY5OGIyOWFmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6ImNJQWdwRk5hNTdGV2V5WEIxQzRaOVE9PSIsInZhbHVlIjoiWlVvMTFIWlE2dnNSWnUxd29HWkI2TUpxTmJ6cktoMTUvMEV6aUZ4SjVSYzQ5YWUrYWJLUGFFekRCMDYvV2pXOXloWnJaWmdBaEF0MEl4eFhBRDlEK2d2M1RFQlJCU3FScVhNRThvb0dIZHdSd0VOQWNWRGpVbEtPOEh2QlIzTVEiLCJtYWMiOiJjODY4NjlmYTg1ZTdlZmJjY2QyZjVmZmFhNGRjN2NhZjdmMGUyMWQ3Njg4NDVhY2MxMjIyMGZjODRhMGM0ZWZlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        },
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 403,
-                            "body": "{\"message\":\"Forbidden\"}",
-                            "name": ""
-                        },
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 404,
-                            "body": "{\"message\":\"Not Found\"}",
-                            "name": ""
-                        },
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 405,
-                            "body": "{\"message\":\"Method Not Allowed\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/prisioners",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/prisioners",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/prisioners"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/prisioners\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/prisioners\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/prisioners\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "inventore",
-                                    "description": "The ID of the prisioner."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/visitors",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/visitors",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/visitors"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                },
-                                {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6IjFkbEg5cFVVTy81c3dOM0dub3hnUnc9PSIsInZhbHVlIjoiNVhGd1JMRkkwSWpIeDhtellSdFhZR2dIMGdSbEhnN1NQRkJtQWlJa0tsUGp5RGxhYWdaM1F6VSsxL1BON1BvZzFMeW5qTFBtb0h1TGJ0Mkw3Ny9zcHE4WWRBRU1PTkxoNXU5dUszaFdUL3JlMXFtL2lUNCtNTzdUTDZSQVMveWwiLCJtYWMiOiIyYmQ3YjNkNmZlOWU0YmMzOTA4YTcyOWI5Yzc1ZmZhZTk4MWM4Mzg3ZTdjZjY0YTQzYTFlZWE0OWZkNmY4YzhmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=\/; samesite=lax; prision_management_system_session=eyJpdiI6InhlVzlBamVmWDM5VnBESUo2YStFY0E9PSIsInZhbHVlIjoibFVrRVFJemxYZkpmSVdQTHZ2R2VxMTRKQWtIcjVob3NwdlNNcG5hRWV2ODhNSE1UMFRhUDhDcHFrMmdmcDRYamRVZzNtK0pHVnBheDFRczBMS04zb1pGVlFyeHg2RnhySEY2VFMxbDdIaUJnZ1FTUy9EQmp2YThzU25RSm5IUFYiLCJtYWMiOiI4MDg2Nzc2NGU3MmNjNDUzYWZkMTFmYTVjMzAzNGY4NDhjMTcyZjY4NGRhYTVmMTBiNThlOTczOTBiMjU3MDQxIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:11:58 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/visitors",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/visitors",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/visitors"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "DELETE api\/visitors\/{id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/visitors\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/visitors\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "perferendis",
-                                    "description": "The ID of the visitor."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         }

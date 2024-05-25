@@ -7,209 +7,228 @@ servers:
   -
     url: 'http://127.0.0.1:8000'
 paths:
-  /api/users:
-    get:
-      summary: ''
-      operationId: getApiUsers
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    post:
-      summary: ''
-      operationId: postApiUsers
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  '/api/users/{id}':
-    delete:
-      summary: ''
-      operationId: deleteApiUsersId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the user.'
-        example: sed
-        required: true
-        schema:
-          type: string
   /api/employees:
     get:
-      summary: ''
-      operationId: getApiEmployees
-      description: ''
+      summary: 'Obter Funcionários'
+      operationId: obterFuncionrios
+      description: 'Recupera uma lista de funcionários.'
       parameters: []
       responses:
         401:
-          description: ''
+          description: 'Autenticação necessária para acessar este endpoint.'
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  message: 'Não autenticado.'
                 properties:
                   message:
                     type: string
-                    example: Unauthenticated.
+                    example: 'Não autenticado.'
+        200:
+          description: 'Funcionários recuperados com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Funcionários recuperados com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Funcionários recuperados com sucesso.'
+        404:
+          description: 'Nenhum funcionário encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nenhum funcionário encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nenhum funcionário encontrado.'
+        500:
+          description: 'Erro ao recuperar funcionários.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao recuperar funcionários.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao recuperar funcionários.'
       tags:
-        - Endpoints
+        - Funcionários
       security: []
     post:
-      summary: ''
-      operationId: postApiEmployees
-      description: ''
+      summary: 'Criar Funcionário'
+      operationId: criarFuncionrio
+      description: 'Cria um novo funcionário.'
       parameters: []
-      responses: {  }
+      responses:
+        201:
+          description: 'Funcionário criado com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Funcionário criado com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Funcionário criado com sucesso.'
+        400:
+          description: 'Erro ao criar funcionário.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar funcionário.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar funcionário.'
+        409:
+          description: 'Nome já cadastrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nome já cadastrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nome já cadastrado.'
+        500:
+          description: 'Erro ao criar funcionário.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar funcionário.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar funcionário.'
       tags:
-        - Endpoints
+        - Funcionários
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                -
+                  type: string
+                  description: 'Nome do funcionário.'
+                  example: 'Jane Doe'
+                -
+                  type: string
+                  description: 'Cargo do funcionário.'
+                  example: Gerente
+                -
+                  type: number
+                  description: 'Salário do funcionário.'
+                  example: 50000
+              required:
+                - 0
+                - 1
+                - 2
       security: []
   '/api/employees/{id}':
     delete:
-      summary: ''
-      operationId: deleteApiEmployeesId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the employee.'
-        example: perspiciatis
-        required: true
-        schema:
-          type: string
-  /api/prisioners:
-    get:
-      summary: ''
-      operationId: getApiPrisioners
-      description: ''
+      summary: 'Excluir Funcionário'
+      operationId: excluirFuncionrio
+      description: 'Exclui um funcionário pelo ID.'
       parameters: []
       responses:
         200:
-          description: ''
+          description: 'Funcionário excluído com sucesso.'
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Success
+                  message: 'Funcionário excluído com sucesso.'
                 properties:
                   message:
                     type: string
-                    example: Success
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-        403:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Forbidden
-                properties:
-                  message:
-                    type: string
-                    example: Forbidden
+                    example: 'Funcionário excluído com sucesso.'
         404:
-          description: ''
+          description: 'Funcionário não encontrado.'
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'Not Found'
+                  message: 'Funcionário não encontrado.'
                 properties:
                   message:
                     type: string
-                    example: 'Not Found'
-        405:
-          description: ''
+                    example: 'Funcionário não encontrado.'
+        500:
+          description: 'Erro ao excluir funcionário.'
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'Method Not Allowed'
+                  message: 'Erro ao excluir funcionário.'
                 properties:
                   message:
                     type: string
-                    example: 'Method Not Allowed'
+                    example: 'Erro ao excluir funcionário.'
+        401:
+          description: 'Autenticação necessária para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Não autenticado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Não autenticado.'
+        403:
+          description: 'Sem permissão para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Sem permissão.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Sem permissão.'
       tags:
-        - Endpoints
-      security: []
-    post:
-      summary: ''
-      operationId: postApiPrisioners
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  '/api/prisioners/{id}':
-    delete:
-      summary: ''
-      operationId: deleteApiPrisionersId
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
+        - Funcionários
       security: []
     parameters:
       -
         in: path
-        name: id
-        description: 'The ID of the prisioner.'
-        example: inventore
+        name: 0
+        description: 'O ID do funcionário.'
+        example: 456
         required: true
         schema:
-          type: string
-  /api/visitors:
+          type: integer
+  /api/prisioners:
     get:
-      summary: ''
-      operationId: getApiVisitors
-      description: ''
+      summary: 'Listar Prisioneiros'
+      operationId: listarPrisioneiros
+      description: 'Retorna a lista de prisioneiros.'
       parameters: []
       responses:
         401:
@@ -224,38 +243,628 @@ paths:
                   message:
                     type: string
                     example: Unauthenticated.
+        200:
+          description: 'Prisioneiros recuperados com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Prisioneiros recuperados com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Prisioneiros recuperados com sucesso.'
+        404:
+          description: 'Nenhum prisioneiro encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nenhum prisioneiro encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nenhum prisioneiro encontrado.'
+        500:
+          description: 'Erro ao recuperar prisioneiros.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao recuperar prisioneiros.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao recuperar prisioneiros.'
       tags:
-        - Endpoints
+        - Prisioneiros
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                -
+                  type: string
+                  description: 'Nome do prisioneiro.'
+                  example: 'John Doe'
+                -
+                  type: string
+                  description: 'Crime cometido pelo prisioneiro.'
+                  example: Roubo
+                -
+                  type: string
+                  description: 'Data de entrada do prisioneiro.'
+                  example: '2024-05-25'
+                -
+                  type: string
+                  description: 'Data de saída do prisioneiro.'
+                  example: '2024-05-25'
+                -
+                  type: string
+                  description: 'Observações sobre o prisioneiro.'
+                  example: 'Prisioneiro perigoso.'
+              required:
+                - 0
+                - 1
+                - 2
+                - 3
+                - 4
       security: []
     post:
-      summary: ''
-      operationId: postApiVisitors
-      description: ''
+      summary: 'Criar Prisioneiro'
+      operationId: criarPrisioneiro
+      description: 'Cria um novo prisioneiro'
       parameters: []
       responses: {  }
       tags:
-        - Endpoints
+        - Prisioneiros
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                -
+                  type: string
+                  description: 'Nome do prisioneiro.'
+                  example: 'John Doe'
+                -
+                  type: string
+                  description: 'Crime cometido pelo prisioneiro.'
+                  example: Roubo
+                -
+                  type: string
+                  description: 'Data de entrada do prisioneiro.'
+                  example: '2024-05-25'
+                -
+                  type: string
+                  description: 'Data de saída do prisioneiro.'
+                  example: '2024-05-25'
+                -
+                  type: string
+                  description: 'Observações sobre o prisioneiro.'
+                  example: 'Prisioneiro perigoso.'
+              required:
+                - 0
+                - 1
+                - 2
+                - 3
+                - 4
       security: []
-  '/api/visitors/{id}':
+  '/api/prisioners/{id}':
     delete:
-      summary: ''
-      operationId: deleteApiVisitorsId
-      description: ''
+      summary: 'Excluir Prisioneiro'
+      operationId: excluirPrisioneiro
+      description: 'Exclui um prisioneiro pelo ID.'
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: 'Prisioneiro excluído com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Prisioneiro excluído com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Prisioneiro excluído com sucesso.'
+        404:
+          description: 'Prisioneiro não encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Prisioneiro não encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Prisioneiro não encontrado.'
+        500:
+          description: 'Erro ao excluir prisioneiro.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao excluir prisioneiro.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao excluir prisioneiro.'
       tags:
-        - Endpoints
+        - Prisioneiros
       security: []
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the visitor.'
-        example: perferendis
+        description: 'O ID do prisioneiro.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/visitors:
+    get:
+      summary: 'Obter Visitantes'
+      operationId: obterVisitantes
+      description: 'Recupera uma lista de visitantes.'
+      parameters: []
+      responses:
+        401:
+          description: 'Autenticação necessária para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Não autenticado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Não autenticado.'
+        200:
+          description: 'Visitantes recuperados com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Visitantes recuperados com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Visitantes recuperados com sucesso.'
+        404:
+          description: 'Nenhum visitante encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nenhum visitante encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nenhum visitante encontrado.'
+        500:
+          description: 'Erro ao recuperar visitantes.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao recuperar visitantes.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao recuperar visitantes.'
+      tags:
+        - Visitantes
+      security: []
+    post:
+      summary: 'Criar Visitante'
+      operationId: criarVisitante
+      description: 'Cria um novo visitante.'
+      parameters: []
+      responses:
+        201:
+          description: 'Visitante criado com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Visitante criado com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Visitante criado com sucesso.'
+        400:
+          description: 'Erro ao criar visitante.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar visitante.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar visitante.'
+        409:
+          description: 'Nome já cadastrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nome já cadastrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nome já cadastrado.'
+        500:
+          description: 'Erro ao criar visitante.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar visitante.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar visitante.'
+      tags:
+        - Visitantes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                -
+                  type: string
+                  description: 'Nome do visitante.'
+                  example: 'Alice Johnson'
+                -
+                  type: integer
+                  description: 'Documento do visitante.'
+                  example: 123456789
+                -
+                  type: string
+                  description: 'Data da visita.'
+                  example: '2024-05-25'
+                -
+                  type: integer
+                  description: 'ID do prisioneiro visitado.'
+                  example: 101
+              required:
+                - 0
+                - 1
+                - 2
+                - 3
+      security: []
+  '/api/visitors/{id}':
+    delete:
+      summary: 'Excluir Visitante'
+      operationId: excluirVisitante
+      description: 'Exclui um visitante pelo ID.'
+      parameters: []
+      responses:
+        200:
+          description: 'Visitante excluído com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Visitante excluído com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Visitante excluído com sucesso.'
+        404:
+          description: 'Visitante não encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Visitante não encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Visitante não encontrado.'
+        500:
+          description: 'Erro ao excluir visitante.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao excluir visitante.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao excluir visitante.'
+        401:
+          description: 'Autenticação necessária para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Não autenticado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Não autenticado.'
+        403:
+          description: 'Sem permissão para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Sem permissão.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Sem permissão.'
+      tags:
+        - Visitantes
+      security: []
+    parameters:
+      -
+        in: path
+        name: 0
+        description: 'O ID do visitante.'
+        example: 101
+        required: true
+        schema:
+          type: integer
+  /api/users:
+    get:
+      summary: 'Obter Usuários'
+      operationId: obterUsurios
+      description: 'Recupera uma lista de usuários.'
+      parameters: []
+      responses:
+        401:
+          description: 'Autenticação necessária para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Não autenticado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Não autenticado.'
+        200:
+          description: 'Usuários recuperados com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Usuários recuperados com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Usuários recuperados com sucesso.'
+        404:
+          description: 'Nenhum usuário encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Nenhum usuário encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Nenhum usuário encontrado.'
+        500:
+          description: 'Erro ao recuperar usuários.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao recuperar usuários.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao recuperar usuários.'
+      tags:
+        - Usuários
+      security: []
+    post:
+      summary: 'Criar Usuário'
+      operationId: criarUsurio
+      description: 'Cria um novo usuário.'
+      parameters: []
+      responses:
+        201:
+          description: 'Usuário criado com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Usuário criado com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Usuário criado com sucesso.'
+        400:
+          description: 'Erro ao criar usuário.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar usuário.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar usuário.'
+        409:
+          description: 'E-mail já cadastrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'E-mail já cadastrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'E-mail já cadastrado.'
+        500:
+          description: 'Erro ao criar usuário.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao criar usuário.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao criar usuário.'
+      tags:
+        - Usuários
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                -
+                  type: string
+                  description: 'Nome do usuário.'
+                  example: 'John Doe'
+                -
+                  type: string
+                  description: 'E-mail do usuário.'
+                  example: john.doe@example.com
+                -
+                  type: string
+                  description: 'Senha do usuário.'
+                  example: password123
+                -
+                  type: string
+                  description: 'Nível de acesso do usuário.'
+                  example: admin
+              required:
+                - 0
+                - 1
+                - 2
+      security: []
+  '/api/users/{id}':
+    delete:
+      summary: 'Excluir Usuário'
+      operationId: excluirUsurio
+      description: 'Exclui um usuário pelo ID.'
+      parameters: []
+      responses:
+        200:
+          description: 'Usuário excluído com sucesso.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Usuário excluído com sucesso.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Usuário excluído com sucesso.'
+        404:
+          description: 'Usuário não encontrado.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Usuário não encontrado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Usuário não encontrado.'
+        500:
+          description: 'Erro ao excluir usuário.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Erro ao excluir usuário.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Erro ao excluir usuário.'
+        401:
+          description: 'Autenticação necessária para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Não autenticado.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Não autenticado.'
+        403:
+          description: 'Sem permissão para acessar este endpoint.'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Sem permissão.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Sem permissão.'
+      tags:
+        - Usuários
+      security: []
+    parameters:
+      -
+        in: path
+        name: 0
+        description: 'O ID do usuário.'
+        example: '123'
         required: true
         schema:
           type: string
 tags:
   -
-    name: Endpoints
-    description: ''
+    name: Funcionários
+    description: 'Endpoints relacionados às operações de funcionários.'
+  -
+    name: Prisioneiros
+    description: 'Endpoints relacionados às operações de prisioneiros'
+  -
+    name: Visitantes
+    description: 'Endpoints relacionados às operações de visitantes.'
+  -
+    name: Usuários
+    description: 'Endpoints relacionados às operações de usuários.'

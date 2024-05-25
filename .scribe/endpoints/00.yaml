@@ -1,17 +1,17 @@
-name: Endpoints
-description: ''
+name: Usuários
+description: 'Endpoints relacionados às operações de usuários.'
 endpoints:
   -
     httpMethods:
       - GET
     uri: api/users
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Usuários
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: 'Obter Usuários'
+      description: 'Recupera uma lista de usuários.'
       authenticated: false
       custom: []
     headers:
@@ -27,13 +27,34 @@ endpoints:
     responses:
       -
         status: 401
-        content: '{"message":"Unauthenticated."}'
+        content: '{"message":"Não autenticado."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6Iks5OWtBYktSeU5MT21RZnA2aEJTbGc9PSIsInZhbHVlIjoiQUVLaDVJTmQwT09CcDRKTDgxVG5PTGNXNHd4alhHUlZ3OFZoZGN5NGJHWC9NQkR4YnkzUEkzZTU3NzQwTmY5WlJxbE14eHpxbjRwMTdzUFRzU281bFd0d2hLUGFXNXd0RGs1d0tKMkRSQzErNVlwWGkvRnVud0J2dVdVMStpTjciLCJtYWMiOiIzMmJlZDE1MjUwZDZmYzI5ZjkxMjg2YzQyNTQ1MzA0YTdkNDlmN2Y5YTIxZDZjMjBlNGM5NDY4YmY5OGIyOWFmIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6ImNJQWdwRk5hNTdGV2V5WEIxQzRaOVE9PSIsInZhbHVlIjoiWlVvMTFIWlE2dnNSWnUxd29HWkI2TUpxTmJ6cktoMTUvMEV6aUZ4SjVSYzQ5YWUrYWJLUGFFekRCMDYvV2pXOXloWnJaWmdBaEF0MEl4eFhBRDlEK2d2M1RFQlJCU3FScVhNRThvb0dIZHdSd0VOQWNWRGpVbEtPOEh2QlIzTVEiLCJtYWMiOiJjODY4NjlmYTg1ZTdlZmJjY2QyZjVmZmFhNGRjN2NhZjdmMGUyMWQ3Njg4NDVhY2MxMjIyMGZjODRhMGM0ZWZlIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
-        description: null
+          set-cookie: 'XSRF-TOKEN=...; path=/; samesite=lax; prision_management_system_session=...; path=/; httponly; samesite=lax'
+        description: 'Autenticação necessária para acessar este endpoint.'
+        custom: []
+      -
+        status: 200
+        content: '{"message":"Usuários recuperados com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Usuários recuperados com sucesso.'
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Nenhum usuário encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Nenhum usuário encontrado.'
+        custom: []
+      -
+        status: 500
+        content: '{"message":"Erro ao recuperar usuários."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao recuperar usuários.'
         custom: []
     responseFields: []
     auth: []
@@ -46,12 +67,12 @@ endpoints:
       - POST
     uri: api/users
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Geral
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: 'Criar Usuário'
+      description: 'Cria um novo usuário.'
       authenticated: false
       custom: []
     headers:
@@ -61,10 +82,74 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      -
+        name: name
+        description: 'Nome do usuário.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      -
+        name: email
+        description: 'E-mail do usuário.'
+        required: true
+        example: john.doe@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      -
+        name: password
+        description: 'Senha do usuário.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      -
+        name: access_level
+        description: 'Nível de acesso do usuário.'
+        required: false
+        example: admin
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 201
+        content: '{"message":"Usuário criado com sucesso."}'
+        headers:
+          content-type: application/json
+        description: 'Usuário criado com sucesso.'
+        custom: []
+      -
+        status: 400
+        content: '{"message":"Erro ao criar usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar usuário.'
+        custom: []
+      -
+        status: 409
+        content: '{"message":"E-mail já cadastrado."}'
+        headers:
+          content-type: application/json
+        description: 'E-mail já cadastrado.'
+        custom: []
+      -
+        status: 500
+        content: '{"message":"Erro ao criar usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao criar usuário.'
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -76,59 +161,29 @@ endpoints:
       - DELETE
     uri: 'api/users/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
+      groupName: Usuários
+      groupDescription: 'Endpoints relacionados às operações de usuários.'
+      subgroup: Usuários
+      subgroupDescription: 'Operações gerais relacionadas a usuários.'
+      title: 'Excluir Usuário'
+      description: 'Exclui um usuário pelo ID.'
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
+      -
         name: id
-        description: 'The ID of the user.'
+        description: 'O ID do usuário.'
         required: true
-        example: quasi
+        example: '123'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: quasi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/employees
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+      id: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -136,305 +191,47 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"message":"Usuário excluído com sucesso."}'
         headers:
-          cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlNWVWR3VmYzZjYzbllRSzI2bi9DcWc9PSIsInZhbHVlIjoidXlHcy95UUQ0RHR2eG1qamU1b2lHeHJwQ1l2VHJSSGh1ZUtieUFzQzQzbEZaanJnWlBuUnVFMWVrTWtJM3RTNHpicngxM0J4cUtTcGViQjVPUzBZaWViRzFVSFYybWZ5Nit6ejZRQzk3ZE15L1FIVHJWVGlMVXVJVzIrVWgrTUYiLCJtYWMiOiIzODhlYTMxMjk3NjkxYzM2OGQ1ZWZmZjY5NzRkODI5OTdkMTY3M2U2ZmNkNzM3OWRhNThiZDUxNzg1NzQyNDcwIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6InhadzNWZ2I5TFdKdDVLSElyakdvL0E9PSIsInZhbHVlIjoiOEVMQzgxYUIzUnI0QlZQSmhqNzc4THVtR0JNM0h1L3pVWUJ6amVvWDk4ZDY1cjBIeGl5WHp6Zm5tSG83ZUZ4UG5mOUdHek1MaHhFUFhtcS9XL1k2UHVOR3B6YTVpeVJybkFGaURqa1FWS3RpcGRRay9xRHFGcDNmTFNXbk95RkkiLCJtYWMiOiJkODgxM2I4MDBmODkwMzViNDg3NDczZmM5NTMwMDE5ZTM3OWQxNTkxOTIzN2M5OTE4ZTdhYzIyNTRmNjEzY2JhIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
-        description: null
+        description: 'Usuário excluído com sucesso.'
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/employees
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/employees/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the employee.'
-        required: true
-        example: 1
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
+      -
+        status: 404
+        content: '{"message":"Usuário não encontrado."}'
+        headers:
+          content-type: application/json
+        description: 'Usuário não encontrado.'
         custom: []
-    cleanUrlParameters:
-      id: quasi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/prisioners
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
+      -
+        status: 500
+        content: '{"message":"Erro ao excluir usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir usuário.'
+        custom: []
       -
         status: 401
-        content: '{"message":"Unauthenticated."}'
+        content: '{"message":"Não autenticado."}'
         headers:
-          cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImZGK0NpbHVySGk1VWM4cU5DaVF4aXc9PSIsInZhbHVlIjoidzFpWWR1ZU9adzRFbm82Vk5ISWJkcGZOOWhGTm9qeFpUOFh0djJCR2FBV1c4K2s2SU1GaHNVOGIvU09TWXY2dmh1bmZlbTRQZVpzcFk3ZVFRQ3RWS28wcHRHQzA5V2VCMHNkb0pQWEpBSFRLbzhRdjBxbGduTUJ4V0xWTWpIYkIiLCJtYWMiOiIxYjljZGNkNGRkM2JiMDQ0NDg2Njg1Mzc3OWNmMjIwOTcwN2ZhMjg3NmU2YzYxOTM1YTU0MjNhMzljNmQ4OTRkIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IkpZaUEzNDFybTJ1WkxwSVEwYS9YSUE9PSIsInZhbHVlIjoiTm5OTFlGQWgzam1YeS9McWo4UzZMS3AzSW8zQnN2Q2docWExU1pta0tzNzliWlpzc1UvZmNyaDBDektTOTdrSG1UcEQvWWQ4aTVvYVBDQWxKSlZWcWxhWkkrSC9zTGQrN2ZsVmsxZ2JTR2Y0NGRTR0dZNTZTR1JLNjAxN0NCWXAiLCJtYWMiOiJiYjFmMzhlZDc5Yzg3MzA0YzZkZTdjMWNmZjg1MTY5NTI3MjFkNmM2NDZmMzExMmI2MGM1MDc4MjJiN2IzOWFhIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
-        description: null
+        description: 'Autenticação necessária para acessar este endpoint.'
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/prisioners
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/prisioners/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the prisioner.'
-        required: true
-        example: 1
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      id: velit
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/visitors
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 403
+        content: '{"message":"Sem permissão."}'
         headers:
-          cache-control: 'no-cache, private'
           content-type: application/json
-          access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IlprMEVrd2FYMFFBMERhT1dGaVdNZWc9PSIsInZhbHVlIjoiRmc4b2E1RUNMV2FTeFRHQ3cybHpteXpMZEtFWkVjSUMwQUMrWWRPOUZrWndQdVNuZWJkTEl0NzJEeFFPbm9sOTlDYkR0bUhMQkFEQjdDeGV5RkVyT1ZWdndSMVlERU5xVVFYaGY3NExtajhJYWhLaDdMNG1Ib1dRN2tnSjJSWU4iLCJtYWMiOiI3OWE0Y2YyOTg1ZTIxZjBiOWExZWMxYTliMDQyOTAwYWYyMmYwNTJmOTdiMWJlNmFiZGYyODMzMjZmMjVjOWRiIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; samesite=lax; prision_management_system_session=eyJpdiI6IkxhSGtJcFovVTJHU3JNK0wyZ0Y2WUE9PSIsInZhbHVlIjoiUTJLZVhEZGhObUdlcW14NFZRM3JOWERlTVlMV2YrSGE5bnFyb3J3eGVFcEZ1NkJ2MzFPZ0FVOXp3R2FWV0h6bWZqUGdnOUg2eFVsWHJHcUZ6ZjhqWWtTeU4vTmxoSzNaTDI1UzZUN0hJc01RSHlsUUN5K0pmR2JldkYrNi9nZVIiLCJtYWMiOiI5NzliYzM2N2YwN2FiNmUwYjJlNjFmYjQ4N2NlNTVmNjY0ZDdlZDk4ZDJiN2NhYzUxM2ZmMGZkNzg4YTY3OTNjIiwidGFnIjoiIn0%3D; expires=Thu, 16 May 2024 03:08:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
-        description: null
+        description: 'Sem permissão para acessar este endpoint.'
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/visitors
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/visitors/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the visitor.'
-        required: true
-        example: ut
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
+      -
+        status: 500
+        content: '{"message":"Erro ao excluir usuário."}'
+        headers:
+          content-type: application/json
+        description: 'Erro ao excluir usuário.'
         custom: []
-    cleanUrlParameters:
-      id: ut
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
