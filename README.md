@@ -3,7 +3,7 @@
 # Management System Laravel Project
 
 O Sistema de Gerenciamento Penitenciário é uma plataforma robusta e segura projetada para administrar todos os aspectos relacionados ao cadastro e controle de indivíduos dentro de uma penitenciária. 
-
+Desenvolvido por <a href="https://github.com/luccazovedi">Lucca Zovedi</a> e <a href="https://github.com/MatheusGelio">Matheus Gelio</a>.
 ## Recursos e Funções
 
 - Cadastro de Usuários: 
